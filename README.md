@@ -1,2 +1,2 @@
 # LTW-SITE
-Site to create to LTW class
+Site to create for LTW class
