@@ -1,0 +1,21 @@
+/* Layout */
+
+
+/* Menu */
+
+#menu
+{
+    background-color: #c9c6c6;
+}
+
+#menu ul
+{
+    display: flex;
+}
+
+#menu ul li
+{
+    display: block;
+    padding-left: 0.65em;
+    padding-right: 1.78em;
+}
