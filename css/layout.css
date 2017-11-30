@@ -1,21 +1,49 @@
 /* Layout */
 
 
+/* Body Header */
+
+body > header
+{
+    display: flex;
+}
+
+body > header > a 
+{
+    flex: 0.05;   
+}
+
+body > header > h1
+{
+    flex: 0.12;
+    margin: 0em;
+    padding-top: 0.1em;    
+}
+
+body > header > h3
+{
+    margin: 0em;
+    padding-top: 0.70em;
+}
+
 /* Menu */
 
 #menu
 {
-    background-color: #c9c6c6;
+    padding-bottom: 0em;
+    margin-bottom: 0em; 
 }
 
 #menu ul
 {
     display: flex;
+    background-color: #ffffff;
 }
 
 #menu ul li
 {
+    background-color: #4cbdda;
     display: block;
-    padding-left: 0.65em;
-    padding-right: 1.78em;
+    margin-bottom: 0em;
+    flex: 1;
 }
