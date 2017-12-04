@@ -22,7 +22,7 @@ $(document).ready(function() {
 	});
 	
 	// When clicking on the mask layer the popup is closed
-	$('#mask').live('click', function() { 
+	$('#mask').on('click', function() { 
 	  $('#mask , #login-box').fadeOut(300 , function() {
 		$('#mask').remove();  
 	}); 

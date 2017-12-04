@@ -9,12 +9,12 @@
 $(document).ready(function() {
   $('#profileoptions #editbutton').click(function() {
     // Hiddes elements
-    $('#profilenews').css('display', 'none');
+    
     $('#profileoptions #editbutton').css('display', 'none');
     $('#profilecontent .ptable').css('display', 'none');
     
     // Creates edit elements
-    $('#profileoptions').append('<a class="button" id="seeprofilebutton" href="#"><img src="./img/button-return.png"/> see profile</a>');
+    $('#profileoptions').append('<a class="button" id="seeprofilebutton" href="#"><img src="./images/button-return.png"/> see profile</a>');
     $('#profilecontent').append('<div id="profileedit"></div>');
 
     // Change password form
@@ -26,17 +26,19 @@ $(document).ready(function() {
     $('#profilecontent #changepassword').append('<input type="button" value="Save"/>');
     
     // Prepares variables for change more form
-    var name  = $('#profilecontent .ptable #name').html();
-    var email = $('#profilecontent .ptable #email').html();
-    var avatar_url = $('#profilecontent #profileimage').attr('src');
-    if (avatar_url == './img/default-avatar.png') {
+    let firstname  = $('#profilecontent .ptable #firstname').html();
+	let lastname  = $('#profilecontent .ptable #lastname').html();
+    let email = $('#profilecontent .ptable #email').html();
+    let avatar_url = $('#profilecontent #profileimage').attr('src');
+    if (avatar_url == './images/default-avatar.png') {
       avatar_url = '';
     }
     
     // Change more form
     $('#profilecontent #profileedit').append('<form id="changemore" class="longform"></form>');
     $('#profilecontent #changemore').append('<h3>Change More</h3>');
-    $('#profilecontent #changemore').append('<input type="textbox" name="name" placeholder="Name" value="' + name + '"/> <br />');
+    $('#profilecontent #changemore').append('<input type="textbox" name="firstname" placeholder="FirstName" value="' + firstname + '"/> <br />');
+	$('#profilecontent #changemore').append('<input type="textbox" name="lastname" placeholder="LastName" value="' + lastname + '"/> <br />');
     $('#profilecontent #changemore').append('<input type="textbox" name="email" placeholder="Email" value="' + email + '"/> <br />');
     $('#profilecontent #changemore').append('<input type="textbox" name="avatar" placeholder="Avatar URL" value="' + avatar_url + '"/> <br />');
     $('#profilecontent #changemore').append('<input type="button" value="Save"/>');
@@ -44,7 +46,6 @@ $(document).ready(function() {
     // Defines handler for 'see profile' button.
     $('#profileoptions #seeprofilebutton').click(function() {
       // Makes elements visible
-      $('#profilenews').css('display', 'block');
       $('#profileoptions #editbutton').css('display', 'block');
       $('#profilecontent .ptable').css('display', 'block');
       
@@ -55,10 +56,10 @@ $(document).ready(function() {
     
     // Defines handler for password save.
     $('#profileedit #changepassword input[type="button"]').click(function() {
-      var user_nickname = $('#profilecontent .ptable #nickname').html();
-      var old_password  = $('#changepassword input[name="oldpassword"]').attr('value');
-      var new_password  = $('#changepassword input[name="password"]').attr('value');
-      var new_password_confirmation = $('#changepassword input[name="passwordconfirmation"]').attr('value');
+      let user_nickname = $('#profilecontent .ptable #nickname').html();
+      let old_password  = $('#changepassword input[name="oldpassword"]').attr('value');
+      let new_password  = $('#changepassword input[name="password"]').attr('value');
+      let new_password_confirmation = $('#changepassword input[name="passwordconfirmation"]').attr('value');
  
       if ((new_password != new_password_confirmation) || (new_password == "")) {
         // Password confirmation incorrect
@@ -85,32 +86,37 @@ $(document).ready(function() {
 
     // Defines handler for more save.
     $('#profileedit #changemore input[type="button"]').click(function() {
-      var user_nickname = $('#profilecontent .ptable #nickname').html();
-      var user_name     = $('#changemore input[name="name"]').attr('value');
-      var user_email    = $('#changemore input[name="email"]').attr('value');
-      var user_avatar   = $('#changemore input[name="avatar"]').attr('value');
+      let user_nickname = $('#profilecontent .ptable #nickname').html();
+      let first_name    = $('#changemore input[name="firstname"]').attr('value');
+	  let last_name     = $('#changemore input[name="lastname"]').attr('value');
+      let user_email    = $('#changemore input[name="email"]').attr('value');
  
       // Checks empty strings
-      if (user_name == "")
-        $('#changemore input[name="name"]').css('box-shadow', '0 0 10px red');
+      if (first_name == "")
+        $('#changemore input[name="firstname"]').css('box-shadow', '0 0 10px red');
+	  if (last_name == "")
+        $('#changemore input[name="lastname"]').css('box-shadow', '0 0 10px red');
       if (user_email == "")
         $('#changemore input[name="email"]').css('box-shadow', '0 0 10px red');
-      if ((user_name == "") || (user_email == ""))
+      if ((first_name == "") || (last_name == "") || (user_email == ""))
         return;
         
       // Does ajax request for user changing
-      $.post('./templates/action_change_user.php', { nickname: user_nickname, name: user_name, email: user_email, avatar: user_avatar }, 
+      $.post('./templates/action_change_user.php', { nickname: user_nickname, firstname: first_name, lastname: last_name, email: user_email}, 
           function(data) {
+			  console.log(data);
+			  ;
             if (data == '1' || data == '2') {
               // Success: changes profile values
-              $('#changemore input[name="name"]').css('box-shadow', '0 0 10px green'); 
+              $('#changemore input[name="firstname"]').css('box-shadow', '0 0 10px green'); 
+			  $('#changemore input[name="lastname"]').css('box-shadow', '0 0 10px green');
               $('#changemore input[name="email"]').css('box-shadow', '0 0 10px green');
-              $('#changemore input[name="avatar"]').css('box-shadow', '0 0 10px green');
               
-              $('#profilecontent .ptable #name').html(user_name);
+              $('#profilecontent .ptable #firstname').html(first_name);
+			  $('#profilecontent .ptable #lastname').html(last_name);
               $('#profilecontent .ptable #email').html(user_email);
               if (user_avatar == '')
-                user_avatar = './img/default-avatar.png';
+                user_avatar = './images/default-avatar.png';	
               $('#profilecontent #profileimage').attr('src', user_avatar);           
             }
             if (data == '2')
