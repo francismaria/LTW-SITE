@@ -11,6 +11,7 @@
 body
 {
     font-family: 'Raleway', sans-serif;
+    padding: 0%;
 }
 
 body > header img
@@ -24,7 +25,6 @@ body > header a
     color: black;
     text-decoration: none;
 }
-
 
 
 /* Menu Style */
@@ -72,27 +72,43 @@ body > footer
 }
 
 
+/* Interaction form 
+
+#interaction_form{
+    padding: 0 1em;
+}
+
+#login_form, #signup_form{
+    margin: 0 1em;
+}
+
+#interaction_form .enter_button{
+    width: 100%;
+    padding: 1em;
+    margin: 1em;
+    border-width: 4px;
+    border-radius: 10px;
+    border-color: #51a0d4;
+    transition: background-color 0.4s, transform 0.4s;
+}
+
+#interaction_form .enter_button:hover{
+    background-color: #51a0d4;
+    transform: scale(1.1, 1.1);
+}
+
+/*
+#interaction_form .enter_button:active{
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}*/
 
 
 /*
+#login, #signup{
+    display: inline-block;
+}*/
 
-#interaction_form
-{
-    background-image: url('../images/reunion.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    border: solid 7px;
-    border-radius: 25px;
-    border-color: #FD4326;
-}
-
-
-#login_form{
+#interaction_form #login_form, #interaction_form #signup_form{
     display: none;
 }
-
-#signup_form{
-    display: none;
-}
-
-*/
