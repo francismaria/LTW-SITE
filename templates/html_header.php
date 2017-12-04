@@ -15,14 +15,14 @@
     <head>
       <meta charset="utf-8">
       <title>To.Do.List</title>
-      <link rel="stylesheet" href="templates/style.css">
+      <link rel="stylesheet" href="css/header.css">
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
       <script type="text/javascript" src="js/login.js"></script>
     </head>
     <body>
       <div id="header">
         <div id="logo">
-          <a href="home.php"><img src="images/logo.jpg" alt="Logo" /></a>
+          <a href="home.php"><img src="images/logo.jpg" alt="Logo" id="logoImg"/></a>
         </div>
         <div id="redLine">
           <?
@@ -31,23 +31,16 @@
             {
                echo '<div id="usershow"><a href="profile_page.php?id='. $_SESSION['userid'] . '">';
                if ($_SESSION['useravatar'] != NULL) {
-                  echo '<img class="mini_avatar" src="' . $_SESSION['useravatar'] . '"/>';
+                  echo '<img class="mini_avatar" src="./images/'. $_SESSION['useravatar'] . '"/>';
                } else {
-                  echo '<img class="mini_avatar" src="./img/default-avatar.png"/>';
+                  echo '<img class="mini_avatar" src="./images/default-avatar.png"/>';
                }
-               echo '<div class="text">' . $_SESSION['usernickname'] . '</div></a>';
+              echo '<div class="text">' . $_SESSION['username'] . '</div></a>';
                echo '<div id="usermenu">';
                echo '<a href="profile_page.php?id='. $_SESSION['userid'] . '"><p> Profile Page </p></a>';
                echo '<a href="favorites_page.php"><p> Favorites Page </p></a>';
-               
-               if( $_SESSION['usertype'] < 3) {
-                  echo '<a href="add_news_page.php"><p> Add news </p></a>';
-                  echo '<a href="my_news_page.php"><p> My news </p></a>';
-               }
-               if( $_SESSION['usertype'] == 1) {
-                  echo '<a href="users_page.php"><p> Manage accounts </p></a>';
-                  echo '<a href="servers_page.php"><p> Manage servers </p></a>';
-               }
+               echo '<a href="list_page.php"><p> List Page </p></a>';
+			   echo '<a href="edit_list_page.php"><p> Edit List Page </p></a>';
                echo '<a href="./templates/action_logout.php"><p> Log out </p></a></div></div>';
             }else {?>
             <a href="#"><div class="text window_login">Sign in or Join!</div></a>
@@ -76,4 +69,6 @@
               }*/
            ?>
         </div>
+		<div id="greenLine">
+		</div>
       </div>
