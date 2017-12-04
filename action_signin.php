@@ -12,7 +12,7 @@
             echo $_FILES['file']['error'];
         }
 
-        $stmt = $dbh->prepare('INSERT INTO USER(USERNAME, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, 
+        $stmt = $dbh->prepare('INSERT INTO USERS(USERNAME, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, 
                               BDAY, BMONTH, BYEAR, IMG_NAME) VALUES
                               (:username, :password, :email, :firstname, :lastname, :bday, :bmonth, :byear, :img_name)');
 

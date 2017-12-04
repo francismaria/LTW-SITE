@@ -27,7 +27,7 @@
       
       <tr>
         <td>Name</td>
-        <td id="name"><?echo $user['FIRST_NAME']?><?echo $user['LAST_NAME']?></td>
+        <td id="name"><?echo $_SESSION['FIRST_NAME']?><?echo $user['LAST_NAME']?></td>
       <tr>
       <tr>
         <td>Nickname</td>

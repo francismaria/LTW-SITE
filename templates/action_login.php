@@ -12,11 +12,16 @@ require_once('../database/db.php');
 
 session_start();
 header('Location: ../profile_page.php');
-if (isset($_POST['username']) && isset($_POST['pass'])) {
-  $db = new Database('../database/helpo.db');
-  $user = $db->get_user_from_credentials($_POST['username'], $_POST['pass']);
+
+	echo "11111111111111111";
+	echo $_POST['username'];
 	
-  if (isset($user['user_id'])) {
+if (isset($_POST['username']) && isset($_POST['password'])) {
+
+	$db = new Database('../database/helpo.db');
+	$user = $db->get_user_from_credentials($_POST['username'], $_POST['password']);
+	
+  if (isset($user['USER_ID'])) {
     $_SESSION['loggedin']     = '1'; //Aqui cria a sessão loggedin para começar para as outras páginas
     $_SESSION['userid']       = $user['USER_ID'];
     $_SESSION['username']     = $user['USERNAME'];

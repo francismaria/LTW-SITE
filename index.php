@@ -40,12 +40,13 @@
 
                     <div id="login_form">
                         <p>Log In</p>
-                        <form action="./templates/action_login.php" method="post">
+                        <form method="POST" action="./templates/action_login.php" >
                             <label>Username<br/></label>
-                            <input type="text" name="username"/>
+                            <input id="username" type="textbox" name="username" autocomplete="on" placeholder="Username">
                             <label><br/>Password<br/></label>
-                            <input type="password" name="pass"/><br/>
+                            <input id="password" name="password" type="password" placeholder="Password"><br/>
                             <input type="submit"  value="Enter"/>
+							
                         </form>
                     </div>
                 </div>
