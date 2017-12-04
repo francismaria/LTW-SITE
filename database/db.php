@@ -72,8 +72,12 @@ class Database {
 */ 
 
   public function update_user_password($user_id, $password) {
-    $this->do_query('UPDATE users SET PASSWORD = ? WHERE USER_ID = ?', 
-                    array($password, $user_id));
+    $statement = $this->database->prepare('UPDATE users SET PASSWORD = ? WHERE USER_ID = ?');
+	$statement->execute(array($password, $user_id));
   }
-
+  
+  public function update_user_more($nickname, $firstname, $lastname, $email) {    
+	$statement = $this->database->prepare('UPDATE users SET FIRST_NAME = ?, LAST_NAME = ?, EMAIL = ? WHERE USERNAME = ?');
+	$statement->execute(array($firstname, $lastname, $email, $nickname));
+  }
 }
