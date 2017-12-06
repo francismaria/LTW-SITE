@@ -8,13 +8,18 @@
  * - Pedro Azevedo   <up201306026@fe.up.pt>
  */
  
-    include_once('session.php');
+    include_once('includes/init.php');
+
 	require_once('./database/db.php');
 
-	$db = new Database('./database/helpo.db');
+    $db = new Database('./database/helpo.db');
+    
+    include_once('templates/common/header.php');
+    include_once('templates/common/footer.php');
 ?>
 
-<html>
+
+<!-- <html>
 
     <head>
         <title>HELPO | To Do Tool</title>
@@ -109,6 +114,4 @@
     </body>
 
     <script type="text/javascript" src="js/file.js"></script>
-</html>
-
-//-->
+</html> -->
