@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="css/header.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/file.js"></script>
         <noscript>Your web browser does not support JavaScript. Some features may be disabled. Updated the latest
             version of your browser.</noscript>
     </head>
@@ -38,11 +39,3 @@
             <h3>Your best friend in making your every day life easier</h3>
         </header>
 
-        <nav id="menu">
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="todo_lists.php">My To Do Lists</a></li>
-                <li><a href="action_login.php">Login</a></li>
-                <li><a href="action.signup.php">Sign up</a></li>
-             </ul>
-        </nav>

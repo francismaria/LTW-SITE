@@ -28,7 +28,7 @@ body > header a
 
 
 /* Menu Style */
-
+/*
 #menu > ul
 {
     padding-left: 0.5em;
@@ -44,7 +44,7 @@ body > header a
     font-size: 1.05em;
 }
 #menu > ul > li
-{   
+{
     margin-bottom: 2em;
     padding: 1em 0em;
     text-align: center;
@@ -60,7 +60,24 @@ body > header a
     background-color: #51a0d4;
     transform: scale(1.1, 1.1);
 }
+*/
 
+#interaction_form{
+    display: inline;
+}
+#interaction_form #login_form, #interaction_form #signup_form{
+    display: none;
+}
+
+.enter_button{
+    width: 296px;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    border-color: #51a0d4;
+    cursor: pointer;
+    transition: background-color 1s, transform 1s
+}
 
 /* Footer Style */
 
@@ -71,44 +88,3 @@ body > footer
     color: #ffffff;
 }
 
-
-/* Interaction form 
-
-#interaction_form{
-    padding: 0 1em;
-}
-
-#login_form, #signup_form{
-    margin: 0 1em;
-}
-
-#interaction_form .enter_button{
-    width: 100%;
-    padding: 1em;
-    margin: 1em;
-    border-width: 4px;
-    border-radius: 10px;
-    border-color: #51a0d4;
-    transition: background-color 0.4s, transform 0.4s;
-}
-
-#interaction_form .enter_button:hover{
-    background-color: #51a0d4;
-    transform: scale(1.1, 1.1);
-}
-
-/*
-#interaction_form .enter_button:active{
-    animation-play-state: paused;
-    -webkit-animation-play-state: paused;
-}*/
-
-
-/*
-#login, #signup{
-    display: inline-block;
-}*/
-
-#interaction_form #login_form, #interaction_form #signup_form{
-    display: none;
-}
