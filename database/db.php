@@ -99,7 +99,7 @@
          * @param $user_id
          */
         public function remove_user($user_id) {
-            $statement = $this->database->prepare('DELETE FROM users WHERE user_id = ?');
+            $statement = $this->database->prepare('DELETE FROM users WHERE USER_ID = ?');
 			$statement->execute(array($user_id));
         }
 		
@@ -128,7 +128,11 @@
             $statement = $this->database->prepare('UPDATE users SET FIRST_NAME = ?, LAST_NAME = ?, EMAIL = ? WHERE USERNAME = ?');
             $statement->execute(array($firstname, $lastname, $email, $username));
         }
-
+		
+		public function update_user_role($user_id, $role) {
+			$statement = $this->database->prepare('UPDATE users SET ROLE = ? WHERE USER_ID = ?');
+			$statement->execute(array($role, $user_id));
+		  }
 
         /**
          * @brief Gets the lists of a the user with user_id from the database
