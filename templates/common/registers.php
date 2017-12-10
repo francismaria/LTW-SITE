@@ -5,7 +5,7 @@
     <section id="interaction_form">
         <div id="login_form">
             <p>Log In</p>
-            <form method="POST" action="templates/actions/action_login.php" >
+            <form method="POST" action="./templates/actions/action_login.php" >
                 <label>Username<br/></label>
                 <input id="username" type="textbox" name="username" autocomplete="on" placeholder="Username">
                 <label><br/>Password<br/></label>

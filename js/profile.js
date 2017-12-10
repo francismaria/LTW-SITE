@@ -14,7 +14,7 @@ $(document).ready(function() {
     $('#profilecontent .ptable').css('display', 'none');
     
     // Creates edit elements
-    $('#profileoptions').append('<a class="button" id="seeprofilebutton" href="#"><img src="./images/button-return.png"/> see profile</a>');
+    $('#profileoptions').append('<a class="button" id="seeprofilebutton" href="#"><img src="../images/button-return.png"/> see profile</a>');
     $('#profilecontent').append('<div id="profileedit"></div>');
 
     // Change password form
