@@ -75,15 +75,38 @@
             $statement->execute(array($user, $password));
             return $statement->fetch();
         }
+		
+		public function get_users() {
+			$statement = $this->database->prepare('SELECT * FROM users');
+			$statement->execute();
+			return $statement->fetchAll();   
+		  }
+		  
+		public function get_server_from_id($server_id) {
+			$statement = $this->database->prepare('SELECT * FROM servers WHERE server_id = ?');
+			$statement->execute(array($server_id));
+			return $statement->fetch();
+		}
+  
+		public function get_servers() {
+			$statement = $this->database->prepare('SELECT * FROM servers');
+			$statement->execute();
+			return $statement->fetchAll();
+		}
 
         /**
          * @brief Removes user from the database.
          * @param $user_id
          */
         public function remove_user($user_id) {
-            $this->do_query('DELETE FROM users WHERE user_id = ?', array($user_id));
+            $statement = $this->database->prepare('DELETE FROM users WHERE user_id = ?');
+			$statement->execute(array($user_id));
         }
-
+		
+		public function remove_server($server_id) {
+			$statement = $this->database->prepare('DELETE FROM servers WHERE server_id = ?');
+			$statement->execute(array($server_id));
+		  }
         /**
          * @brief Updates user password.
          * @param $user_id
@@ -105,6 +128,20 @@
             $statement = $this->database->prepare('UPDATE users SET FIRST_NAME = ?, LAST_NAME = ?, EMAIL = ? WHERE USERNAME = ?');
             $statement->execute(array($firstname, $lastname, $email, $username));
         }
+
+
+        /**
+         * @brief Gets the lists of a the user with user_id from the database
+         * @param &user_id
+         * @return mixed
+         */
+
+        public function getListsFromUserId($user_id) {
+            global $dbh;
+            $stmt = $this->database->prepare('SELECT * FROM todolists WHERE USER_ID = ?');
+            $stmt->execute(array($user_id));
+            return $stmt->fetch();
+          }
     }
 
 ?>
