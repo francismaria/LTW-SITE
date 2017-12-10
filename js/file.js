@@ -43,7 +43,7 @@ function setYears(){
     let startYear = 1900;
     let currentYear = (new Date()).getFullYear();
 
-    let years = document.getElementById('year');
+    let years = document.getElementById('years');
 
     for(let i = (currentYear-1); i >= startYear; i--){
         let option = document.createElement('option');

@@ -33,6 +33,7 @@
                     </select>
                     <label>Month:</label>
                     <select id="month" name="month" onchange="updateDays()" required>
+                        <option value="null">-</option>
                         <option value="january">January</option>
                         <option value="february">February</option>
                         <option value="march">March</option>
@@ -47,7 +48,7 @@
                         <option value="decemeber">December</option>
                     </select>
                     <label>Year:</label>
-                    <select id="year" name="year" required>
+                    <select id="years" name="years" required>
                     </select>
                 </div>
                 <label><br/>Profile Picture<br/></label>

@@ -12,5 +12,6 @@
     <footer>
       &copy; Bruno Miguel & Francisco & Pedro Azevedo // Copyright 2017 // LTW @ FEUP
     </footer>
+    <script type="text/javascript" src="js/file.js"></script>
   </body>
 </html>

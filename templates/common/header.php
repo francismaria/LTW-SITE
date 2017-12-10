@@ -22,8 +22,7 @@
         <link rel="stylesheet" href="css/header.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
-        <script type="text/javascript" src="js/file.js"></script>
-        <noscript>Your web browser does not support JavaScript. Some features may be disabled. Updated the latest
+        <noscript>Your web browser does not support JavaScript. Some features may be disabled. Update to the latest
             version of your browser.</noscript>
     </head>
 
