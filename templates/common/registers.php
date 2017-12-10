@@ -15,7 +15,7 @@
         </div>
 
         <div id="signup_form">
-            <form action="action_signin.php" method="post" enctype="multipart/form-data">
+            <form action="templates/actions/action_signin.php" method="post" enctype="multipart/form-data">
                 <label><br/>First Name<br/></label>
                 <input type="text" name="first_name" required/>
                 <label><br/>Last Name<br/></label>

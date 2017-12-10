@@ -19,6 +19,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	
   if (isset($user['USER_ID'])) {
     $_SESSION['loggedin']     = '1'; //Aqui cria a sessão loggedin para começar para as outras páginas
+	$_SESSION['usertype']     = $user['ROLE'];   
     $_SESSION['userid']       = $user['USER_ID'];
     $_SESSION['username']     = $user['USERNAME'];
     $_SESSION['useremail']    = $user['EMAIL'];
