@@ -9,8 +9,8 @@
 */
 session_start();
 if ($_SESSION['loggedin'] && $_POST['nickname'] && $_POST['oldpassword'] && $_POST['newpassword']) {
-  require_once('../database/db.php');
-  $db = new Database('../database/helpo.db');
+  require_once('../../database/db.php');
+  $db = new Database('../../database/helpo.db');
   $user = $db->get_user_from_credentials($_POST['nickname'], $_POST['oldpassword']);
   if (isset($user['USER_ID'])) {
     $db->update_user_password($user['USER_ID'], $_POST['newpassword']);

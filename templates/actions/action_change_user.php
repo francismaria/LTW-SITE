@@ -10,9 +10,9 @@
 session_start();
   
 if ($_SESSION['loggedin']) {
-  require_once('../database/db.php');
+  require_once('../../database/db.php');
 
-  $db = new Database('../database/helpo.db');
+  $db = new Database('../../database/helpo.db');
 
   $db->update_user_more(stripcslashes(strip_tags($_POST['nickname'])), stripcslashes(strip_tags($_POST['firstname'])),stripcslashes(strip_tags($_POST['lastname'])),						
                         stripcslashes(strip_tags($_POST['email'])));
