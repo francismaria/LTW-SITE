@@ -146,6 +146,19 @@
             $stmt->execute(array($user_id));
             return $stmt->fetch();
           }
+
+
+          /**
+         * @brief Gets the tasks from a list with a certain list_id from the database
+         * @param &list_id
+         * @return mixed
+         */
+
+        public function getTasksFromcListsId($list_id) {
+            $stmt = $this->database->prepare('SELECT * FROM tasks WHERE list_id = ?');
+            $stmt->execute(array($list_id));
+            return $stmt->fetch();
+          } 
     }
 
 ?>
