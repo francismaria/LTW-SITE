@@ -1,13 +1,12 @@
-    <button type="button" class="enter_button">HOME</button>
-    <button type="button" onclick="showLoginForm()" class="enter_button">LOG IN</button>
-    <button type="button" onclick="showSignupForm()" class="enter_button">SIGN UP</button>
+    <button type="button" class="form_button">HOME</button>
+    <button type="button" onclick="showLoginForm()" class="form_button">LOG IN</button>
+    <button type="button" onclick="showSignupForm()" class="form_button">SIGN UP</button>
 
     <section id="interaction_form">
         <div id="login_form">
-            <p>Log In</p>
             <form method="POST" action="./templates/actions/action_login.php" >
                 <label>Username<br/></label>
-                <input id="username" type="textbox" name="username" autocomplete="on" placeholder="Username">
+                <input id="username" type="text" name="username" autocomplete="on" placeholder="Username">
                 <label><br/>Password<br/></label>
                 <input id="password" name="password" type="password" placeholder="Password"><br/>
                 <input type="submit"  value="Enter"/>

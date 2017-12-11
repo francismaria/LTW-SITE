@@ -1,12 +1,12 @@
 <?php
-/* 
- * Copyright (C) LTW @ FEUP project authors. All rights reserved.
- *
- * Authors:
- * - Bruno Miguel <@fe.up.pt>
- * - Francisco <@fe.up.pt>
- * - Pedro Azevedo   <up201306026@fe.up.pt>
- */
+    /*
+     * Copyright (C) LTW @ FEUP project authors. All rights reserved.
+     *
+     * Authors:
+     * - Bruno Miguel <@fe.up.pt>
+     * - Francisco <@fe.up.pt>
+     * - Pedro Azevedo   <up201306026@fe.up.pt>
+     */
  
     include_once('includes/init.php');
 	require_once('./database/db.php');
