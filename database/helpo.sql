@@ -47,7 +47,6 @@ CREATE TABLE tasks (
 
 /* Users -------------------------------------------------
 /* administrators: role = 1
-/* some extra:	   role = 2
 /* common users:   role = 3
 /**/
 INSERT INTO users VALUES(1, 3,'francisMaria','PasswordAs173','fran@hotmail.com','Francisco','Maria',16,'september',1998,'francisMaria.jpg');
