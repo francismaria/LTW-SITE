@@ -75,7 +75,6 @@ body > header a
     padding: 80px 0 80px 120px;
 }
 
-
 #login input[type="text"], #login input[type="password"]{
     width: 60%;
     padding: 7px;
@@ -88,9 +87,6 @@ body > header a
 #login_info{
     flex: 1;
 }
-
-
-
 
 #signup_form{
     display: none;

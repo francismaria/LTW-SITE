@@ -91,7 +91,7 @@ function showSignupForm(){
     let login_form = document.getElementById('login_form');
 
     // Makes sure that the two forms don't appear at once
-    if(login_form.style.display == "block"){
+    if(login_form.style.display == "flex"){
         login_form.style.display = "none";
     }
 
