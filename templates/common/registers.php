@@ -4,14 +4,20 @@
 
     <section id="interaction_form">
         <div id="login_form">
-            <form method="POST" action="./templates/actions/action_login.php" >
-                <label>Username<br/></label>
-                <input id="username" type="text" name="username" autocomplete="on" placeholder="Username">
-                <label><br/>Password<br/></label>
-                <input id="password" name="password" type="password" placeholder="Password"><br/>
-                <input type="submit"  value="Enter"/>
-            </form>
+            <div id="login">
+                <form method="POST" action="./templates/actions/action_login.php" >
+                    <label>Username<br/></label>
+                    <input id="username" type="text" name="username" autocomplete="on" placeholder="Username">
+                    <label><br/>Password<br/></label>
+                    <input id="password" name="password" type="password" placeholder="Password"><br/>
+                    <input type="submit"  value="Enter"/>
+                </form>
+            </div>
+            <div id="login_info">
+                <img src="images/talking.jpg" height="350" width="100%" alt="It wasn't possible to show this image."/>
+            </div>
         </div>
+
 
         <div id="signup_form">
             <form action="templates/actions/action_signin.php" method="post" enctype="multipart/form-data">

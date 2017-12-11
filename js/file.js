@@ -75,11 +75,11 @@ function showLoginForm(){
         signup_form.style.display = "none";
     }
 
-    if(login_form.style.display == "block"){
+    if(login_form.style.display == "flex"){
         login_form.style.display = "none";
     }
     else{
-        login_form.style.display = "block";
+        login_form.style.display = "flex";
     }
 }
 
