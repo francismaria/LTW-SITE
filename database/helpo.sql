@@ -46,7 +46,7 @@ CREATE TABLE tasks (
 	task_completed		INTEGER NOT NULL, /*0 not completed 1 completed (false,true)*/
 	limit_day			INTEGER NOT NULL,
 	limit_month			INTEGER NOT NULL,
-	limit_year			INTEGER NOT NULL,
+	limit_year			INTEGER NOT NULL
 );
 
 CREATE TABLE listProject (
@@ -84,7 +84,7 @@ INSERT INTO users VALUES(3, 3, 'bruno','54321', 'bruno@hotmal.com', 'Bruno', 'Mi
 /**/
 INSERT INTO servers(name, url) VALUES ('Pedro Azevedo', 'http://gnomo.fe.up.pt/~up201306026/ltw_helpoo');
 INSERT INTO servers(name, url) VALUES ('Francisco Maria', 'http://gnomo.fe.up.pt/~up201306026/ltw');
-INSERT INTO servers(name, url) VALUES ('Bruno Miguel', 'http://gnomoo.fe.up.pt/~up201504781/LtwProjeto/Projeto')
+INSERT INTO servers(name, url) VALUES ('Bruno Miguel', 'http://gnomo.fe.up.pt/~up201504781/LtwProjeto/Projeto');
 
 
 /* Lists ----------------------------------------------
