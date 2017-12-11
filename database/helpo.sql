@@ -27,30 +27,49 @@ CREATE TABLE tags (
   value   TEXT
 );
 
+CREATE TABLE projects (
+	project_id 		INTEGER PRIMARY KEY AUTOINCREMENT,
+	user_id 		INTEGER REFERENCES users,
+	project_name 	VARCHAR(50) NOT NULL
+);
 
-
-CREATE TABLE todolists (
+CREATE TABLE lists (
 	list_id		INTEGER PRIMARY KEY AUTOINCREMENT,
 	list_name	VARCHAR(30) NOT NULL,
-	USER_ID		INTEGER REFERENCES users NOT NULL
+	user_id		INTEGER REFERENCES users NOT NULL
 );
 
 CREATE TABLE tasks (
 	task_id 			INTEGER PRIMARY KEY AUTOINCREMENT,
 	task_name 			VARCHAR(50) NOT NULL,
 	task_description	VARCHAR(500),
-	task_completed		INTEGER NOT NULL,
+	task_completed		INTEGER NOT NULL, /*0 not completed 1 completed (false,true)*/
 	limit_day			INTEGER NOT NULL,
 	limit_month			INTEGER NOT NULL,
 	limit_year			INTEGER NOT NULL,
-	list_id				INTEGER REFERENCES todolists NOT NULL
+);
+
+CREATE TABLE listProject (
+  list_id 		INTEGER REFERENCES lists,
+  project_id 	INTEGER REFERENCES projects,
+  role	  		INTEGER NOT NULL,
+  
+  PRIMARY KEY (list_id, project_id)
 );
 
 CREATE TABLE taskList (
-  list_id INTEGER REFERENCES todolist,
-  USER_ID INTEGER REFERENCES users,
+  task_id INTEGER REFERENCES tasks,
+  list_id INTEGER REFERENCES lists,
   
-  PRIMARY KEY (news_id, USER_ID)
+  PRIMARY KEY (task_id, list_id)
+);
+
+CREATE TABLE projectTaskUser (
+	project_id 	INTEGER REFERENCES projects,
+	task_id 	INTEGER REFERENCES tasks,
+	user_id 	INTEGER REFERENCES users,
+	
+	PRIMARY KEY (project_id, task_id, user_id)
 );
 /* Users -------------------------------------------------
 /* administrators: role = 1
