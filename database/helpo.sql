@@ -39,12 +39,19 @@ CREATE TABLE tasks (
 	task_id 			INTEGER PRIMARY KEY AUTOINCREMENT,
 	task_name 			VARCHAR(50) NOT NULL,
 	task_description	VARCHAR(500),
+	task_completed		INTEGER NOT NULL,
 	limit_day			INTEGER NOT NULL,
 	limit_month			INTEGER NOT NULL,
 	limit_year			INTEGER NOT NULL,
 	list_id				INTEGER REFERENCES todolists NOT NULL
 );
 
+CREATE TABLE taskList (
+  list_id INTEGER REFERENCES todolist,
+  USER_ID INTEGER REFERENCES users,
+  
+  PRIMARY KEY (news_id, USER_ID)
+);
 /* Users -------------------------------------------------
 /* administrators: role = 1
 /* common users:   role = 3
@@ -69,9 +76,9 @@ INSERT INTO todolists VALUES(2, 'Lcom Project', 3);
 
 /* Tasks --------------------------------------------------
 /**/
-INSERT INTO tasks VALUES(1, 'Implement todolists page', 'Every User has several todo lists; there should be a page that will display them all', 12, 12, 2017, 1);
-INSERT INTO tasks VALUES(2, 'Implement tasks page', 'Every todo list has several tasks; there should be a page that will display all the tasks of a list', 12, 12, 2017, 1);
-INSERT INTO tasks VALUES(3, 'Implement Mouse and Keyboard Input', 'Platform should move using the keyboard and mouse', 20, 12, 2017, 2);
+INSERT INTO tasks VALUES(1, 'Implement todolists page', 'Every User has several todo lists; there should be a page that will display them all', 0, 12, 12, 2017, 1);
+INSERT INTO tasks VALUES(2, 'Implement tasks page', 'Every todo list has several tasks; there should be a page that will display all the tasks of a list', 0, 12, 12, 2017, 1);
+INSERT INTO tasks VALUES(3, 'Implement Mouse and Keyboard Input', 'Platform should move using the keyboard and mouse', 0, 20, 12, 2017, 2);
 
 
 COMMIT;
