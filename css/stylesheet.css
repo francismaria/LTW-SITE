@@ -75,6 +75,15 @@ body > header a
     padding: 80px 0 80px 120px;
 }
 
+#login input[type="submit"]{
+    width: 60%;
+    padding: 7px;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: gray;
+    cursor: hand;
+}
+
 #login input[type="text"], #login input[type="password"]{
     width: 60%;
     padding: 7px;
