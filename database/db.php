@@ -140,12 +140,14 @@
          * @return mixed
          */
 
-        public function getListsFromUserId($user_id) {
-            global $dbh;
-            $stmt = $this->database->prepare('SELECT * FROM todolists WHERE USER_ID = ?');
-            $stmt->execute(array($user_id));
-            return $stmt->fetch();
-          }
+        public function getListsFromUserId($user_id) 
+        {   
+            //global $db;
+            echo $user_id;
+            $statement = $this->database->prepare('SELECT * FROM lists WHERE user_id= ?');
+            $statement->execute(array($user_id));
+            return $statement->fetch();
+        }
 
 
           /**
@@ -154,11 +156,14 @@
          * @return mixed
          */
 
-        public function getTasksFromcListsId($list_id) {
-            $stmt = $this->database->prepare('SELECT * FROM tasks WHERE list_id = ?');
-            $stmt->execute(array($list_id));
-            return $stmt->fetch();
-          } 
+            //ESTA FUNCAO JA NAO PODE SER USADA ASSIM PK A TABELA "TASKS" ja NAO TEM UMA REFERENCIA PARA A LIST_ID, NAO SEI COMO FAZER.
+         
+        // public function getTasksFromListsId($list_id) 
+        // {
+        //     $stmt = $this->database->prepare('SELECT * FROM tasks WHERE list_id = ?');
+        //     $stmt->execute(array($list_id));
+        //     return $stmt->fetch();
+        // } 
     }
 
 ?>

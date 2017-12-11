@@ -29,8 +29,8 @@ CREATE TABLE tags (
 
 CREATE TABLE projects (
 	project_id 		INTEGER PRIMARY KEY AUTOINCREMENT,
-	user_id 		INTEGER REFERENCES users,
-	project_name 	VARCHAR(50) NOT NULL
+	project_name 	VARCHAR(50) NOT NULL,
+	user_id 		INTEGER REFERENCES users
 );
 
 CREATE TABLE lists (
@@ -87,17 +87,17 @@ INSERT INTO servers(name, url) VALUES ('Francisco Maria', 'http://gnomo.fe.up.pt
 INSERT INTO servers(name, url) VALUES ('Bruno Miguel', 'http://gnomoo.fe.up.pt/~up201504781/LtwProjeto/Projeto')
 
 
-/* TodoLists ----------------------------------------------
+/* Lists ----------------------------------------------
 /**/
-INSERT INTO todolists VALUES(1, 'Ltw Project', 3);
-INSERT INTO todolists VALUES(2, 'Lcom Project', 3);
+INSERT INTO lists VALUES(1, 'Ltw Project', 3);
+INSERT INTO lists VALUES(2, 'Lcom Project', 3);
 
 
 /* Tasks --------------------------------------------------
 /**/
-INSERT INTO tasks VALUES(1, 'Implement todolists page', 'Every User has several todo lists; there should be a page that will display them all', 0, 12, 12, 2017, 1);
-INSERT INTO tasks VALUES(2, 'Implement tasks page', 'Every todo list has several tasks; there should be a page that will display all the tasks of a list', 0, 12, 12, 2017, 1);
-INSERT INTO tasks VALUES(3, 'Implement Mouse and Keyboard Input', 'Platform should move using the keyboard and mouse', 0, 20, 12, 2017, 2);
+INSERT INTO tasks VALUES(1, 'Implement todolists page', 'Every User has several todo lists; there should be a page that will display them all', 0, 12, 12, 2017);
+INSERT INTO tasks VALUES(2, 'Implement tasks page', 'Every todo list has several tasks; there should be a page that will display all the tasks of a list', 0, 12, 12, 2017);
+INSERT INTO tasks VALUES(3, 'Implement Mouse and Keyboard Input', 'Platform should move using the keyboard and mouse', 0, 20, 12, 2017);
 
 
 COMMIT;

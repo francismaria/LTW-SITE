@@ -34,16 +34,17 @@ body > header > h3
     margin-bottom: 0em; 
 }
 
-#menu ul
+#menu 
 {
     display: flex;
-    background-color: #ffffff;
+    background-color: #eaeaea;
 }
 
-#menu ul li
+#menu button
 {
     background-color: #4cbdda;
     display: block;
     margin-bottom: 0em;
     flex: 1;
+    padding: 0.6em;
 }

@@ -1,6 +1,6 @@
-    <button type="button" class="form_button">HOME</button>
+    <!-- <button type="button" class="form_button">HOME</button>
     <button type="button" onclick="showLoginForm()" class="form_button">LOG IN</button>
-    <button type="button" onclick="showSignupForm()" class="form_button">SIGN UP</button>
+    <button type="button" onclick="showSignupForm()" class="form_button">SIGN UP</button> -->
 
     <section id="interaction_form">
         <div id="login_form">
