@@ -7,7 +7,7 @@
 * - Francisco <@fe.up.pt>
 * - Pedro Azevedo   <up201306026@fe.up.pt>
 */
-    require_once('../../database/db.php');
+    require_once('./database/db.php');
 ?>
 
 

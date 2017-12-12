@@ -54,14 +54,9 @@
             <?}?>
         </div>
         <div id="yellowLine">
-           <?  /*TODO: colocar os principais TO-DO lists!!!!!
-              $db = new Database('database/helpoo.db');
-              $tags = $db->get_ordered_tags(5);
-              foreach($tags as $tag)
-              {
-                 echo '<a href="search_page.php?search=' . $tag['value'] .
-                      '"><div class="text">' . $tag['value'] . '</div></a>';
-              }*/
+           <?  
+                 echo '<a href="todolists.php?id=' . $_SESSION['userid'] .'"><div class="text">My Lists</div></a>';
+              
            ?>
         </div>
       </div>

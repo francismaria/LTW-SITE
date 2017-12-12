@@ -50,7 +50,13 @@
             $this->database->commit();
             return $user_id;
         }
-
+		
+		public function add_list($list_name, $user_id) {
+            $statement = $this->database->prepare('INSERT INTO lists(list_name, user_id) VALUES (?,?)');
+            $statement->execute(array($list_name, $user_id));
+			$list_id = $this->database->lastInsertId();
+			return $list_id;
+        }
         /**
          * @brief Gets the user information from the database.
          * @param $user_id
@@ -106,7 +112,12 @@
 		public function remove_server($server_id) {
 			$statement = $this->database->prepare('DELETE FROM servers WHERE server_id = ?');
 			$statement->execute(array($server_id));
-		  }
+		}
+		
+		public function remove_list($list_id) {
+			$statement = $this->database->prepare('DELETE FROM lists WHERE list_id = ?');
+			$statement->execute(array($list_id));
+		}
         /**
          * @brief Updates user password.
          * @param $user_id
