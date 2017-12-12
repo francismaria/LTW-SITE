@@ -151,19 +151,32 @@
 
 
           /**
-         * @brief Gets the tasks from a list with a certain list_id from the database
+         * @brief Gets the taskLists with a certain list_id from the database
+         * @param &list_id
+         * @return mixed
+         */
+         
+        public function getTasksListsFromListsId($list_id) 
+        {
+            $stmt = $this->database->prepare('SELECT * FROM taskLists WHERE list_id = ?');
+            $stmt->execute(array($list_id));
+            return $stmt->fetchAll();
+        } 
+
+
+        /**
+         * @brief Gets the tasks with a certain task_id from the database
          * @param &list_id
          * @return mixed
          */
 
-            //ESTA FUNCAO JA NAO PODE SER USADA ASSIM PK A TABELA "TASKS" ja NAO TEM UMA REFERENCIA PARA A LIST_ID, NAO SEI COMO FAZER.
-         
-        // public function getTasksFromListsId($list_id) 
-        // {
-        //     $stmt = $this->database->prepare('SELECT * FROM tasks WHERE list_id = ?');
-        //     $stmt->execute(array($list_id));
-        //     return $stmt->fetch();
-        // } 
+        public function getTasksFromTaskId($task_id) 
+        {
+            $stmt = $this->database->prepare('SELECT * FROM tasks WHERE task_id = ?');
+            $stmt->execute(array($task_id));
+            return $stmt->fetchAll();
+        } 
+
     }
 
 ?>
