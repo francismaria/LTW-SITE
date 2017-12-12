@@ -143,10 +143,10 @@
         public function getListsFromUserId($user_id) 
         {   
             //global $db;
-            echo $user_id;
+            // echo $user_id;
             $statement = $this->database->prepare('SELECT * FROM lists WHERE user_id= ?');
             $statement->execute(array($user_id));
-            return $statement->fetch();
+            return $statement->fetchAll();
         }
 
 

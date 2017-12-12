@@ -62,6 +62,9 @@ body > header a
     transform: scale(1.1, 1.1);
 }
 
+
+/* Form Style */
+
 #interaction_form{
     display: inline;
 }
@@ -111,6 +114,7 @@ body > header a
     transition: background-color 1s, transform 1s
 }
 
+
 /* Footer Style */
 
 body > footer
@@ -125,3 +129,30 @@ body > footer
     color: #ffffff;
 }
 
+
+/* Lists Style */
+
+#todolists > ul
+{
+    margin-top: 5em;
+    margin-bottom: 5em;
+    list-style: none;
+}
+
+#todolists > ul > li
+{
+    padding: 1em;
+    border-style: solid;
+    border-radius: 1.5em;
+    border-width: 0.2em;
+    border-color: #5aa7da;
+    text-indent: 3em;
+    font-family: cursive;
+    margin-bottom: 1em;
+}
+
+#todolists > ul > li > a
+{
+    color: #000000;
+    text-decoration: none;
+}

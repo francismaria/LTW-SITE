@@ -7,7 +7,7 @@
 * - Francisco <@fe.up.pt>
 * - Pedro Azevedo   <up201306026@fe.up.pt>
 */
-   require_once('database/db.php');
+    require_once('../../database/db.php');
 ?>
 
 
@@ -17,9 +17,9 @@
         <title>HELPO | To Do List</title>
         <meta charset="UTF-8" />
         <meta name="description" content="HELPO is a tool to help you organize your every day life!"/>
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
-        <link rel="stylesheet" href="css/layout.css"/>
-        <!-- <link rel="stylesheet" href="css/header.css"> -->
+        <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css"/>
+        <link rel="stylesheet" href="../../css/layout.css"/>
+        <!-- <link rel="stylesheet" href="../../css/header.css"> -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
         <noscript>Your web browser does not support JavaScript. Some features may be disabled. Update to the latest
@@ -30,7 +30,7 @@
         <header>
             <div id="logo">
                 <a href="index.php">
-                    <img src="images/todolist.png">
+                    <img src="../../images/todolist.png">
                 </a>
             </div>
 
