@@ -99,7 +99,17 @@
 			$statement->execute();
 			return $statement->fetchAll();
 		}
-
+		/**
+         * @brief Gets the tasks with a certain task_id from the database
+         * @param &list_id
+         * @return mixed
+         */ 
+		public function getTaskFromTaskId($task_id) 
+        {   
+            $statement = $this->database->prepare('SELECT * FROM tasks WHERE task_id= ?');
+            $statement->execute(array($task_id));
+            return $statement->fetch();
+        }
         /**
          * @brief Removes user from the database.
          * @param $user_id
@@ -175,18 +185,7 @@
         } 
 
 
-        /**
-         * @brief Gets the tasks with a certain task_id from the database
-         * @param &list_id
-         * @return mixed
-         */
-
-        public function getTasksFromTaskId($task_id) 
-        {
-            $stmt = $this->database->prepare('SELECT * FROM tasks WHERE task_id = ?');
-            $stmt->execute(array($task_id));
-            return $stmt->fetchAll();
-        } 
+        
 
     }
 
