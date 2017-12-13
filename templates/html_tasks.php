@@ -24,6 +24,7 @@ $taskLists = $db->getTasksListsFromListsId($_GET['id']);
       <div class="line">
         Task Name
         <input name="name" type="textbox" placeholder="Name"/>
+		<input name="id" type="textbox" placeholder="Name" value="<?=$_GET['id'] ?>"style="display:none"/>
 		<input class="clearform" type="button" value="Clear"/><br/>
 	</div>
 	<div class="line">	
@@ -46,7 +47,7 @@ $taskLists = $db->getTasksListsFromListsId($_GET['id']);
 	  <td>Description</td>
     </tr><?
     foreach ($taskLists as $taskList) {
-		$task = $db->getTaskFromTaskId($taskList['task_id']);
+	  $task = $db->getTaskFromTaskId($taskList['task_id']);
       echo '<tr>';
       echo '<td><input id="' . $taskList['task_id'] . '" type="checkbox"/></td>';
       echo '<td><a id="' . $task['task_name'] . '" >' . $task['task_name'] .'</a></td>';

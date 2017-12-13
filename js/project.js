@@ -100,11 +100,12 @@ $(document).ready(function() {
 		var task_lmonth = $('#tasksadd input[name="month"]').val();
 		var task_lyear = $('#tasksadd input[name="year"]').val();
 		var task_description = $('#tasksadd textarea').val();
+		var list_id = $('#tasksadd input[name="id"]').val();
 		if (task_name == '') {
 			$('#tasksadd input[name="name"]').css('box-shadow', '0 0 10px red');
 			return;
 		}
-		if (task_lday == '') {
+		if (task_lday == '' || task_lday<1 || task_lday>31) {
 			$('#tasksadd input[name="day"]').css('box-shadow', '0 0 10px red');
 			return;
 		}
@@ -121,7 +122,7 @@ $(document).ready(function() {
 			return;
 		}
 		$.post('./templates/actions/action_add_task.php',
-		   { name: task_name, description: task_description, lday: task_lday, lmonth: task_lmonth, lyear: task_lyear},
+		   { name: task_name, description: task_description, id: list_id, lday: task_lday, lmonth: task_lmonth, lyear: task_lyear},
 		   function(data) {
 			 if (data != '0') {
 			   $('#tasksadd input[name="name"]').val('');
