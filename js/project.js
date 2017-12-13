@@ -141,4 +141,48 @@ $(document).ready(function() {
 			 }
 		   });
 	}); 
+	
+	$('#projectscontent #delete').click(function() {			
+		$('#projectstable tr:not(:first-child) td input:checked').each(function() {
+		  var projectid = $(this).attr('id');
+		  var projectname = $(this).parent().parent();
+		  $.post('./templates/actions/action_remove_project.php',
+				 { project_id: projectid },
+				 function(data) {
+				   if (data == '1') {
+					 projectname.remove();
+				   }
+				 });
+		});
+	});
+	
+	$('#projectscontent #add').click(function() {
+		if ($('#projectscontent #projectsadd').is(':hidden')) {
+		  $(this).css('background-color', 'gainsboro');
+		  $('#projectscontent #projectsadd').show();
+		} else {
+		  $(this).css('background-color', 'transparent');
+		  $('#projectscontent #projectsadd').hide();
+		}
+	});
+	
+	$('#projectsadd #addproject').click(function() {
+		var project_name = $('#projectsadd input[name="name"]').val();
+		if (project_name == '') {
+			$('#projectsadd input[name="name"]').css('box-shadow', '0 0 10px red');
+			return;
+		}
+		$.post('./templates/actions/action_add_project.php',
+		   { name: project_name},
+		   function(data) {
+			 if (data != '0') {
+			   $('#projectsadd input[name="name"]').val('');
+			   $('#projectstable').append('<tr><td><input id="' + data + 
+										 '" type="checkbox"/></td><td><a href="manageproject.php?id=' +
+										 data + '">' + project_name + '</a></td></tr>');
+			 } else {
+			   $('#projectsadd input[name="name"]').css('box-shadow', '0 0 10px red');
+			 }
+		   });
+	});
 });

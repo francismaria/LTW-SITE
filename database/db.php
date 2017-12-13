@@ -67,6 +67,13 @@
 			$statement->execute(array($task_id, $list_id));
 			return $task_id;
         }
+		
+		public function add_project($project_name, $user_id) {
+            $statement = $this->database->prepare('INSERT INTO projects(project_name, user_id) VALUES (?,?)');
+            $statement->execute(array($project_name, $user_id));
+			$project_id = $this->database->lastInsertId();
+			return $project_id;
+        }
         /**
          * @brief Gets the user information from the database.
          * @param $user_id
@@ -109,6 +116,12 @@
 			$statement->execute();
 			return $statement->fetchAll();
 		}
+		
+		public function get_projects_by_user_id($user_id) {
+			$statement = $this->database->prepare('SELECT * FROM projects WHERE user_id = ?');
+			$statement->execute(array($user_id));
+			return $statement->fetchAll();
+		}
 		/**
          * @brief Gets the tasks with a certain task_id from the database
          * @param &list_id
@@ -144,6 +157,11 @@
 			$statement->execute(array($task_id));
 			$statement = $this->database->prepare('DELETE FROM taskLists WHERE task_id = ?');
 			$statement->execute(array($task_id));
+		}
+		
+		public function remove_project($project_id) {
+			$statement = $this->database->prepare('DELETE FROM projects WHERE project_id = ?');
+			$statement->execute(array($project_id));
 		}
         /**
          * @brief Updates user password.

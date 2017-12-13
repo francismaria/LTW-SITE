@@ -35,15 +35,10 @@
                } else {
                   echo '<img class="mini_avatar" src="./images/default-avatar.png"/>';
                }
-               echo '<div class="text">' . $_SESSION['usernickname'] . '</div></a>';
+               echo '<div class="text">' . $_SESSION['username'] . '</div></a>';
                echo '<div id="usermenu">';
                echo '<a href="profile_page.php?id='. $_SESSION['userid'] . '"><p> Profile Page </p></a>';
                echo '<a href="favorites_page.php"><p> Favorites Page </p></a>';
-               
-               if( $_SESSION['usertype'] < 3) {
-                  echo '<a href="add_list_page.php"><p> Add Lists </p></a>';
-                  echo '<a href="my_list_page.php"><p> My Lists</p></a>';
-               }
                if( $_SESSION['usertype'] == 1) {
                   echo '<a href="users_page.php"><p> Manage accounts </p></a>';
                   echo '<a href="servers_page.php"><p> Manage servers </p></a>';
@@ -55,7 +50,8 @@
         </div>
         <div id="yellowLine">
            <?  
-                 echo '<a href="todolists.php?id=' . $_SESSION['userid'] .'"><div class="text">My Lists</div></a>';
+				echo '<a href="projects.php?id=' . $_SESSION['userid'] .'"><div class="text">My Projects</div></a>';
+                echo '<a href="todolists.php?id=' . $_SESSION['userid'] .'"><div class="text">My Lists</div></a>';
               
            ?>
         </div>

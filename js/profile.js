@@ -14,7 +14,7 @@ $(document).ready(function() {
     $('#profilecontent .ptable').css('display', 'none');
     
     // Creates edit elements
-    $('#profileoptions').append('<a class="button" id="seeprofilebutton" href="#"><img src="../images/button-return.png"/> see profile</a>');
+    $('#profileoptions').append('<a class="button" id="seeprofilebutton" href="#"><img src="./images/button-return.png"/> see profile</a>');
     $('#profilecontent').append('<div id="profileedit"></div>');
 
     // Change password form
@@ -68,7 +68,7 @@ $(document).ready(function() {
         return;
       } else {
         // Does ajax request for password changing
-        $.post('./templates/action_change_password.php', { nickname: user_nickname, oldpassword: old_password, newpassword: new_password }, 
+        $.post('./templates/actions/action_change_password.php', { nickname: user_nickname, oldpassword: old_password, newpassword: new_password }, 
           function(data) {
             if (data == '1') {
               // Success
@@ -102,7 +102,7 @@ $(document).ready(function() {
         return;
         
       // Does ajax request for user changing
-      $.post('./templates/action_change_user.php', { nickname: user_nickname, firstname: first_name, lastname: last_name, email: user_email}, 
+      $.post('./templates/actions/action_change_user.php', { nickname: user_nickname, firstname: first_name, lastname: last_name, email: user_email}, 
           function(data) {
 			  console.log(data);
 			  ;
