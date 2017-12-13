@@ -74,6 +74,12 @@
 			$project_id = $this->database->lastInsertId();
 			return $project_id;
         }
+		
+		public function add_list_to_project($list_id, $project_id) {
+            $statement = $this->database->prepare('INSERT INTO listProjects(list_id, project_id, role) VALUES (?,?,?)');
+			$role = "criador";
+            $statement->execute(array($list_id, $project_id, $role));
+        }
         /**
          * @brief Gets the user information from the database.
          * @param $user_id
@@ -121,6 +127,36 @@
 			$statement = $this->database->prepare('SELECT * FROM projects WHERE user_id = ?');
 			$statement->execute(array($user_id));
 			return $statement->fetchAll();
+		}
+		
+		public function get_project_by_project_id($project_id) {
+			$statement = $this->database->prepare('SELECT * FROM projects WHERE project_id = ?');
+			$statement->execute(array($project_id));
+			return $statement->fetch();
+		}
+		
+		public function get_lists() {
+			$statement = $this->database->prepare('SELECT * FROM lists');
+			$statement->execute();
+			return $statement->fetchAll();
+		}
+		
+		public function get_list_id_from_list_name($list_name) {
+			$statement = $this->database->prepare('SELECT * FROM lists WHERE list_name = ?');
+			$statement->execute(array($list_name));
+			return $statement->fetch();
+		}
+		
+		public function get_lists_by_project_id($project_id) {
+			$statement = $this->database->prepare('SELECT * FROM listProjects WHERE project_id = ?');
+			$statement->execute(array($project_id));
+			return $statement->fetchAll();
+		}
+		
+		public function get_list_from_id($list_id) {
+			$statement = $this->database->prepare('SELECT * FROM lists WHERE list_id = ?');
+			$statement->execute(array($list_id));
+			return $statement->fetch();
 		}
 		/**
          * @brief Gets the tasks with a certain task_id from the database

@@ -37,7 +37,7 @@ $projectsList = $db->get_projects_by_user_id($_GET['id']);
     foreach ($projectsList as $projectList) {
       echo '<tr>';
       echo '<td><input id="' . $projectList['project_id'] . '" type="checkbox"/></td>';
-      echo '<td><a id="' . $projectList['project_name'] . '" >' . $projectList['project_name'] .'</a></td>';
+      echo '<td><a id="' . $projectList['project_name'] . '"href="edit_project.php?id=' . $projectList['project_id'] . '" >' . $projectList['project_name'] .'</a></td>';
       echo '</tr>';
     }
 ?></table>

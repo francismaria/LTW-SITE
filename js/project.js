@@ -185,4 +185,33 @@ $(document).ready(function() {
 			 }
 		   });
 	});
+	
+	$('#editprojectscontent #add').click(function() {
+		if ($('#editprojectscontent #editprojectsadd').is(':hidden')) {
+		  $(this).css('background-color', 'gainsboro');
+		  $('#editprojectscontent #editprojectsadd').show();
+		} else {
+		  $(this).css('background-color', 'transparent');
+		  $('#editprojectscontent #editprojectsadd').hide();
+		}
+	});
+	
+	$('#editprojectsadd #addeditproject').click(function() {
+		var list_name = $('#editprojectsadd input[name="name"]').val();
+		var project_id = $('#editprojectsadd input[name="projectid"]').val();
+		if (list_name == '') {
+			$('#editprojectsadd input[name="name"]').css('box-shadow', '0 0 10px red');
+			return;
+		}
+		$.post('./templates/actions/action_add_list_to_project.php',
+		   { name: list_name, id: project_id},
+		   function(data) {
+			 if (data > '0' && data != '') {
+				 console.log(data);
+			   //window.location.reload(false); 
+			 } else {
+			   $('#editprojectsadd input[name="name"]').css('box-shadow', '0 0 10px red');
+			 }
+		   });
+	});
 });
