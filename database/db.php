@@ -57,6 +57,16 @@
 			$list_id = $this->database->lastInsertId();
 			return $list_id;
         }
+		
+		public function add_task($task_name, $task_description, $list_id, $limit_day, $limit_month, $limit_year) {
+            $statement = $this->database->prepare('INSERT INTO tasks(task_name, task_description, task_completed, limit_day, limit_month, limit_year) VALUES (?,?,?,?,?,?)');
+            $task_completed = 0;
+			$statement->execute(array($task_name, $task_description, $task_completed, $limit_day, $limit_month, $limit_year));
+			$task_id = $this->database->lastInsertId();
+			$statement = $this->database->prepare('INSERT INTO taskLists(task_id, list_id) VALUES (?,?)');
+			$statement->execute(array($task_id, $list_id));
+			return $task_id;
+        }
         /**
          * @brief Gets the user information from the database.
          * @param $user_id
@@ -127,6 +137,13 @@
 		public function remove_list($list_id) {
 			$statement = $this->database->prepare('DELETE FROM lists WHERE list_id = ?');
 			$statement->execute(array($list_id));
+		}
+		
+		public function remove_task($task_id) {
+			$statement = $this->database->prepare('DELETE FROM tasks WHERE task_id = ?');
+			$statement->execute(array($task_id));
+			$statement = $this->database->prepare('DELETE FROM taskLists WHERE task_id = ?');
+			$statement->execute(array($task_id));
 		}
         /**
          * @brief Updates user password.

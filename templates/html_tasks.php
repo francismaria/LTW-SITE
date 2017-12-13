@@ -24,9 +24,19 @@ $taskLists = $db->getTasksListsFromListsId($_GET['id']);
       <div class="line">
         Task Name
         <input name="name" type="textbox" placeholder="Name"/>
-		<input id="addtask" type="button" value="Add"/>
-        <input class="clearform" type="button" value="Clear"/><br/>
+		<input class="clearform" type="button" value="Clear"/><br/>
+	</div>
+	<div class="line">	
+		Limit Date
+		<input name="day" type="textbox" placeholder="DD"/>
+		<input name="month" type="textbox" placeholder="MM"/>
+		<input name="year" type="textbox" placeholder="YYYY"/>        
       </div>
+	  <div class="line">
+	  Description
+		<textarea rows="1" name="description" placeholder="Description"></textarea>
+		<input id="addtask" type="button" value="Add"/>
+	  </div>
     </form>
 <form>
   <table class="list taskslist" id="<? echo $task_section; ?>table">

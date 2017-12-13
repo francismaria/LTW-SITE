@@ -54,6 +54,8 @@ $(document).ready(function() {
 	$('.clearform').click(function() {
 		$(this).closest('form').find('input[type="textbox"]').val('');
 		$(this).closest('form').find('input[type="textbox"]').css('box-shadow', '0 0 0px');
+		$(this).closest('form').find('textarea').val('');
+		$(this).closest('form').find('textarea').css('box-shadow', '0 0 0px');
 	});
 
 	$('input[type="textbox"]').click(function() {
@@ -66,4 +68,76 @@ $(document).ready(function() {
 	else
 	  $(this).closest('form').find('input[type="checkbox"]').removeAttr('checked');
 	});
+	
+	$('#taskscontent #delete').click(function() {			
+		$('#taskstable tr:not(:first-child) td input:checked').each(function() {
+		  var taskid = $(this).attr('id');
+		  var taskname = $(this).parent().parent();
+		  var taskdescriptions = $(this).parent().parent().parent();
+		  $.post('./templates/actions/action_remove_task.php',
+				 { task_id: taskid },
+				 function(data) {
+				   if (data == '1') {
+					 taskname.remove();
+				   }
+				 });
+		});
+	});
+	
+	$('#taskscontent #add').click(function() {
+		if ($('#taskscontent #tasksadd').is(':hidden')) {
+		  $(this).css('background-color', 'gainsboro');
+		  $('#taskscontent #tasksadd').show();
+		} else {
+		  $(this).css('background-color', 'transparent');
+		  $('#taskscontent #tasksadd').hide();
+		}
+	});
+	
+	$('#tasksadd #addtask').click(function() {
+		var task_name = $('#tasksadd input[name="name"]').val();
+		var task_lday = $('#tasksadd input[name="day"]').val();
+		var task_lmonth = $('#tasksadd input[name="month"]').val();
+		var task_lyear = $('#tasksadd input[name="year"]').val();
+		var task_description = $('#tasksadd textarea').val();
+		if (task_name == '') {
+			$('#tasksadd input[name="name"]').css('box-shadow', '0 0 10px red');
+			return;
+		}
+		if (task_lday == '') {
+			$('#tasksadd input[name="day"]').css('box-shadow', '0 0 10px red');
+			return;
+		}
+		if (task_lmonth == '') {
+			$('#tasksadd input[name="month"]').css('box-shadow', '0 0 10px red');
+			return;
+		}
+		if (task_lyear == '') {
+			$('#tasksadd input[name="year"]').css('box-shadow', '0 0 10px red');
+			return;
+		}
+		if (task_description == '') {
+			$('#tasksadd textarea').css('box-shadow', '0 0 10px red');
+			return;
+		}
+		$.post('./templates/actions/action_add_task.php',
+		   { name: task_name, description: task_description, lday: task_lday, lmonth: task_lmonth, lyear: task_lyear},
+		   function(data) {
+			 if (data != '0') {
+			   $('#tasksadd input[name="name"]').val('');
+			   $('#tasksadd input[name="day"]').val('');
+			   $('#tasksadd input[name="month"]').val('');
+			   $('#tasksadd input[name="year"]').val('');
+			   $('#tasksadd textarea').val('');
+			   $('#taskstable').append('<tr><td><input id="' + data + 
+										 '" type="checkbox"/><td><a id="' + task_name + '" >' + task_name +'</a></td><td><a id="' + task_description + '">' + task_description +'</a></td></tr>'); //alterar
+			 } else {
+			   $('#tasksadd input[name="name"]').css('box-shadow', '0 0 10px red');
+			   $('#tasksadd input[name="day"]').css('box-shadow', '0 0 10px red');
+			   $('#tasksadd input[name="month"]').css('box-shadow', '0 0 10px red');
+			   $('#tasksadd input[name="year"]').css('box-shadow', '0 0 10px red');
+			   $('#tasksadd textarea').css('box-shadow', '0 0 10px red');
+			 }
+		   });
+	}); 
 });
