@@ -80,6 +80,11 @@
 			$role = "criador";
             $statement->execute(array($list_id, $project_id, $role));
         }
+		
+		public function add_user_to_task($project_id, $task_id, $user_id) {
+            $statement = $this->database->prepare('INSERT INTO projectTaskUsers(project_id, task_id, user_id) VALUES (?,?,?)');
+            $statement->execute(array($project_id, $task_id, $user_id));
+        }
         /**
          * @brief Gets the user information from the database.
          * @param $user_id
@@ -92,6 +97,12 @@
 
             return $statement->fetch();
         }
+		
+		public function get_user_by_project_task_id($project_id, $task_id) {
+			$statement = $this->database->prepare('SELECT * FROM projectTaskUsers WHERE project_id = ? AND task_id = ?');
+            $statement->execute(array($project_id, $task_id));
+            return $statement->fetch();
+		}
 
         /**
          * @brief Gets user from its website credentials.
@@ -156,6 +167,12 @@
 		public function get_list_from_id($list_id) {
 			$statement = $this->database->prepare('SELECT * FROM lists WHERE list_id = ?');
 			$statement->execute(array($list_id));
+			return $statement->fetch();
+		}
+		
+		public function get_user_by_name($user_name) {
+			$statement = $this->database->prepare('SELECT * FROM users WHERE USERNAME = ?');
+			$statement->execute(array($user_name));
 			return $statement->fetch();
 		}
 		/**
@@ -224,8 +241,12 @@
 		public function update_user_role($user_id, $role) {
 			$statement = $this->database->prepare('UPDATE users SET ROLE = ? WHERE USER_ID = ?');
 			$statement->execute(array($role, $user_id));
-		  }
-
+		}
+		
+		public function update_user_to_task($project_id, $task_id, $user_id) {
+            $statement = $this->database->prepare('UPDATE projectTaskUsers SET user_id = ? WHERE project_id = ? AND task_id = ?');
+            $statement->execute(array($user_id, $project_id, $task_id));
+        }
         /**
          * @brief Gets the lists of a the user with user_id from the database
          * @param &user_id

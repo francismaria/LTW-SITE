@@ -207,11 +207,28 @@ $(document).ready(function() {
 		   { name: list_name, id: project_id},
 		   function(data) {
 			 if (data > '0' && data != '') {
-				 console.log(data);
-			   //window.location.reload(false); 
+			    window.location.reload(false); 
 			 } else {
 			   $('#editprojectsadd input[name="name"]').css('box-shadow', '0 0 10px red');
 			 }
 		   });
+	});
+	
+	$('#editprojectscontent #addUser').click(function() {	
+		$('#editprojecttable tr:not(:first-child) td input:checked').each(function() {
+		  var taskid = $(this).attr('id');
+		  var projectid = $('#editprojectsadd input[name="projectid"]').val();
+		  var username = $('input[name="user' + taskid + '"]').val();
+		  $.post('./templates/actions/action_add_user_to_task.php',
+				 { task_id: taskid, user_name: username, project_id: projectid},
+				 function(data) {
+				   if (data != '0' && data!= '') {
+					   console.log(data);
+					   $('input[name="user' + taskid + '"]').css('box-shadow', '0 0 10px green');
+				   } else{
+					  $('input[name="user' + taskid + '"]').css('box-shadow', '0 0 10px red');
+				   }
+				 });
+		});
 	});
 });
