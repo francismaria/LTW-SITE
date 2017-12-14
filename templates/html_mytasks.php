@@ -26,6 +26,7 @@ $db = new Database('./database/helpo.db');
       <td><input class="checkboxcontrol" type="checkbox"/></td>
       <td>Project Name</td>
 	  <td>Task Name</td>
+	  <td>Days Left</td>
     </tr><?
 	$alltasks = $db->get_tasks_from_user($_GET['id']);	
 	foreach($alltasks as $alltask){	
@@ -38,6 +39,7 @@ $db = new Database('./database/helpo.db');
 		echo '<td><a id="' . $task['task_name'] .'"style="background-color: ';
 		echo get_color($task['task_id']);
 		echo '">' . $task['task_name'] . '</a></td>';
+		echo '<td>'.get_days($task['task_id']).'</td>';
 		echo '</tr>';
 					
 	} 
