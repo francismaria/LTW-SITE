@@ -7,9 +7,10 @@
 * - Francisco <@fe.up.pt>
 * - Pedro Azevedo   <up201306026@fe.up.pt>
 */
-
+include_once('./templates/actions/action_color_task.php');
 include_once('./database/db.php');
 $db = new Database('./database/helpo.db');
+
 
 ?>
 <div id="mytasks">
@@ -33,8 +34,10 @@ $db = new Database('./database/helpo.db');
 		echo '<tr>';
 		echo '<td><input id="' . $task['task_id'] . '" type="checkbox"/></td>';
 		echo '<input name="id'.$task['task_id'].'" type="textbox" placeholder="Name" value="'. $project['project_name'].'"style="display:none"/>';
-		echo '<td><a id="' . $project['project_name'] . '"href="projects.php?id=' . $project['project_id'] . '" >' . $project['project_name'] .'</a></td>';
-		echo '<td><a id="' . $task['task_name'] .'">' . $task['task_name'] . '</a></td>';
+		echo '<td><a id="' . $project['project_name'] . '"href="projects.php?id=' . $project['project_id'] . '"  >' . $project['project_name'] .'</a></td>';
+		echo '<td><a id="' . $task['task_name'] .'"style="background-color: ';
+		echo get_color($task['task_id']);
+		echo '">' . $task['task_name'] . '</a></td>';
 		echo '</tr>';
 					
 	} 

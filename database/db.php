@@ -198,6 +198,13 @@
             $statement->execute(array($task_id));
             return $statement->fetch();
         }
+		
+		public function get_completed_from_task_id($task_id) 
+        {   
+            $statement = $this->database->prepare('SELECT * FROM tasks WHERE task_id= ?');
+            $statement->execute(array($task_id));
+            return $statement->fetch();
+        }
         /**
          * @brief Removes user from the database.
          * @param $user_id
@@ -263,6 +270,11 @@
 		public function update_user_to_task($project_id, $task_id, $user_id) {
             $statement = $this->database->prepare('UPDATE projectTaskUsers SET user_id = ? WHERE project_id = ? AND task_id = ?');
             $statement->execute(array($user_id, $project_id, $task_id));
+        }
+		
+		public function update_task_completed($task_id) {
+            $statement = $this->database->prepare('UPDATE tasks SET task_completed = ? WHERE task_id = ?');
+            $statement->execute(array(1,$task_id));
         }
         /**
          * @brief Gets the lists of a the user with user_id from the database

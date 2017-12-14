@@ -240,9 +240,20 @@ $(document).ready(function() {
 				 { project_name: projectname, task_id: taskid },
 				 function(data) {
 				   if (data == '1') {
-					   console.log(data);
 				   }
-				   console.log(data);
+				 });
+		});
+	});
+	
+	$('#mytaskscontent #completed').click(function() {			
+		$('#mytaskstable tr:not(:first-child) td input:checked').each(function() {
+		  var taskid = $(this).attr('id');
+		  $.post('./templates/actions/action_add_task_completed.php',
+				 {task_id: taskid },
+				 function(data) {
+				   if (data == '1') {
+				   }
+				   
 				 });
 		});
 	});
