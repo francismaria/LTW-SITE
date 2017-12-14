@@ -50,7 +50,7 @@
                         <option value="september">September</option>
                         <option value="october">October</option>
                         <option value="november">November</option>
-                        <option value="decemeber">December</option>
+                        <option value="december">December</option>
                     </select>
                     <label>Year:</label>
                     <select id="years" name="years" required>

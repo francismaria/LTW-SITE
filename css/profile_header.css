@@ -1,0 +1,565 @@
+* {
+	margin: 0px;
+	font-family: Trebuchet MS;
+}
+
+
+body 
+{
+	margin: 2em 10em 3em 10em;
+	background-color: #eaeaea;
+	position: relative; 
+}
+
+
+/* Header */
+
+body > header
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+  margin-bottom: 2em;
+}
+
+body > header img
+{
+  width: 45px;
+  height: 40px;
+}
+
+body > header a
+{
+  color: black;
+  text-decoration: none;
+}
+
+body > header
+{
+    display: flex;
+}
+
+body > header > a 
+{
+    flex: 0.05;   
+}
+
+body > header > h1
+{
+    flex: 0.15;
+    margin: 0em;
+    padding-top: 0.1em;    
+}
+
+/* div#header {
+	height: 200px;
+	padding: 0px;
+	margin-bottom: 30px;
+}
+
+div#header div.text {
+	font-size: 25px;
+	color: white;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 30px;
+}
+
+
+#logo {
+	margin: 0px;
+	padding-left: 0px;
+	width: 200px;
+	float: left;
+} */
+
+
+div.window_login {
+   float: right !important;
+}
+
+div.dateheader {
+   margin-left: 30px;
+}
+
+/****** LINES OF HEADER ******/
+
+#redLine {
+	background-color: #b51010;
+	float: left;
+	width: 700px;
+	height: 71px;
+}
+
+div#redLine div.text {
+	float: left;
+	height: 100%;
+}
+
+#yellowLine {
+	background-color: #e7e541;
+	float: left;
+	width: 700px;
+	height: 63px;
+}
+
+div#yellowLine div.text {
+	float: left;
+	height: 100%;
+	padding: 20px 8px 0px 10px;
+}
+
+div#yellowLine a:first-child div.text {
+	margin-left: 30px;
+}
+
+#greenLine {
+	background-color: #a2ba36;
+	float: left;
+	width: 700px;
+	height: 66px;
+}
+
+#searchOption form {
+	height: 95%;
+	float: right;
+}
+
+#searchOption {
+	height: 100%;
+	width: 220px;
+	float: right;
+	padding-left: 10px;
+   padding-top: 18px;
+   margin-right: 10px;
+}
+
+#searchOption input[type="image"] {
+   float: left;
+}
+
+#searchOption input[type="text"] {
+   border: 0px;
+   background-color: #A2BA36;
+	font-size: 25px;
+	color: #000000;
+	width: 150px;
+	float: left;
+}
+
+#greenLine ::-webkit-input-placeholder {
+    color: #000000;
+}
+
+#moreOptions {
+	width: 32px;
+	height: 30px;
+	float: left;
+	background: url("../images/options.png") no-repeat scroll 0 0 transparent;
+	display: block;
+	margin-left: 5px;
+}
+
+#moreOptions:hover {
+	background-position: center bottom;
+}
+
+#customizeProp {
+   display: none;
+   background-color: #a2ba36;
+   border-top: 1px dashed #eaeaea;
+   margin-top: 47px;
+   padding: 10px;
+   position: absolute;
+   right: 0;
+   z-index: 10;
+   width: 200px;
+   height: 200px;   
+}
+
+#customizeProp input {
+   width: 50px;
+   height: 18px;
+   float: right;
+   clear: right;
+   padding: 1px;
+   margin: 1px;
+   font-size: 15px;
+}
+
+#customizeProp b {
+   float: left;
+   clear: left;
+   margin-top: 6px;
+}
+
+/* Long Forms ---------------------------------------------
+/**/
+
+.longform input[type='textbox'], .longform input[type='password'] {
+  width: 98%;
+  border: 0px;
+  padding: 1%;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.longform input[type='submit'], .longform input[type='button'] {
+  width: 10%;
+  margin-top: 20px;
+  margin-left: 45%;
+}
+
+.longform textarea {
+  width: 98%;
+  max-width: 98%;
+  padding: 1%;
+  border: 0px;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Compact Forms ------------------------------------------
+/**/
+
+.compactform {
+  width: 880px;
+  float: left;
+  padding: 5px 10px;
+  background-color: gainsboro;
+}
+
+.compactform input[type='textbox'] {
+  border: 0px;
+  padding: 5px;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.compactform textarea {
+  border: 0px;
+  padding: 5px;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.compactform input[type="submit"], .compactform input[type="button"] {
+  float: right;
+  width: 100px;
+  margin-top: 5px;
+}
+
+.compactform .line {
+  padding: 5px 0px;
+  vertical-align: bottom;
+}
+
+/* Properties Table ---------------------------------------
+/**/
+
+.ptable {
+  float: left;
+  padding-left: 10px;
+}
+
+.ptable td {
+  padding: 5px 10px;
+}
+
+.ptable td:first-child {
+  display: block;
+  margin: 2px 0px;
+  text-align: right;
+  font-weight: bold;
+  border-right: 1px gray solid;
+}
+
+/* Date Inputs --------------------------------------------
+/**/
+
+.day {
+  width: 25px;
+}
+
+.month {
+  width: 25px;
+}
+
+.year {
+  width: 50px;
+}
+
+/* Button -------------------------------------------------
+/**/
+
+.button img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.button {
+  float: right;
+  padding: 0px 10px;
+  padding-top: 5px;
+  vertical-align: top;
+}
+
+div.longform input[value="Save"] {
+  margin: 20px 5px 20px 40%;
+}
+
+div.longform input[value="Cancel"] {
+  margin: 0px;
+}
+
+/* List ---------------------------------------------------
+/**/
+
+.list {
+  width: 100%;
+  float: left;
+  margin-top: 5px;
+}
+  
+.list tr td {
+  padding: 5px 10px;
+}
+
+.list tr:first-child td {
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.list tr:not(:first-child) td {
+  border-bottom: 1px gray solid;
+}
+
+/* Profile ------------------------------------------------
+/**/
+
+#profilecontent {
+  padding-top: 15px;
+  border-top: 1px gray solid;
+}
+
+#profileimage {
+  float: left;
+  width: 150px;
+}
+
+#profileoptions {
+  float: right;
+}
+
+#profileedit {
+  width: 730px;
+  float: right;
+}
+
+/* Images ------------------------------------------------
+/**/
+
+img#editcom {
+   right: 25px;
+}
+
+img.actionbutton {
+   top: 0;
+   position: absolute;
+   right: 0;
+   margin: 20px 20px 0px 0px;
+}
+
+img#imagen {
+   clip: rect(0px, 650px, 650px, 0px);
+}
+
+/* Login box ------------------------------------------------
+/**/
+
+div#login-box {
+	display:none;
+	background-color: #b51010;	
+	position: absolute;
+	z-index: 99999;
+	margin-top: 71px;
+	right: 0;
+	width: 213px;
+	border-top: 1px dashed #eaeaea;
+	padding: 10px 0px 10px 8px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+form.signin {
+   width: 190px;
+   right: 0;
+}
+
+form.signin input {
+   margin-bottom: 8px;
+}
+
+form.signin p {
+   margin-top: 10px;
+   font-size: 11px;
+   font-style: italic;
+}
+
+#mask {
+	display: none;
+	background: #000; 
+	position: fixed; 
+	left: 0; 
+	top: 0; 
+	z-index: 10;
+	width: 100%; 
+	height: 100%;
+	opacity: 0.2;
+	z-index: 999;
+}
+
+
+
+/* Footer */
+
+div#footer {
+   width: 900px;
+   float: left;   
+   background-color: #c7c6c6;
+   color: #555454;
+   margin-top: 30px;
+   text-align: center;
+   padding: 10px 0px;
+   font-weight: bold;
+	font-size: 15px;
+}
+
+
+
+/* Menu */
+
+#menu
+{
+    margin-top: 1em;
+    padding-left: 0.5em;
+    padding-bottom: 1em;
+    margin-left: 0em;
+    margin-bottom: 2em;
+    display: grid;
+    grid-template-rows: [top] auto [bottom];
+    grid-template-columns: [left] 8fr [frstmiddle] 1.5fr [sndmiddle] 2fr [right];
+}
+
+
+#menu div#theUser
+{
+    grid-area: top / sndmiddle / bottom / right;
+}
+
+
+#menu div#theUser div#usershow
+{
+    font-size: 1.4em;
+    padding:0.2em;
+    display:flex;
+    background-color: #4cbdda;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    border-color: #51a0d4;
+    padding-left: 0.5em;
+}
+
+#menu div#theUser div#usershow a
+{
+    color:#353434;
+    text-decoration: none;
+}
+
+#menu div#theUser div#usershow img
+{
+    width: 1.2em;
+}
+
+
+#usermenu
+{
+  display: none;
+  z-index: 3;
+}
+
+#usershow .text 
+{
+    padding-top: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#usermenu p:hover 
+{
+    background-color: #EAEAEA;
+}
+
+#usermenu p 
+{
+   font-weight: bold;
+}
+
+
+#usershow:hover #usermenu
+{
+    display: block;
+    position: absolute;
+    background-color: #020303;	
+	  right: 0;
+	  padding: 10px;
+	  margin-top: 50px;
+	  font-size: 15px;
+	  font-weight: bold;
+	  border-top: 1px dashed #EAEAEA;
+}
+
+img.mini_avatar {
+   width: 36px;
+   position: relative;
+   clip: rect(0px, 40px, 40px, 0px);  
+   float: left;
+   border: 1.3px double #000000;
+   border-radius: 3.5px;
+   margin-right: 10px;
+}
+
+
+#menu > div#options
+{
+  grid-area: top / left / bottom / frstmiddle;
+  display: flex;
+}
+
+#menu > div#options > a
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #353434;
+    background-color: #4cbdda;
+    text-decoration: none;
+    margin-bottom: 0em;
+    flex: 2;
+    padding: 0.6em;
+    font-size: 0.95em;
+    text-align: center;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    border-color: #51a0d4;
+    flex: 2;
+    display: block;
+    transition: background-color 1s, transform 1s;
+}
+
+#menu > #options > a:hover
+{
+    background-color: #51a0d4;
+    transform: scale(1.1, 1.1);
+}

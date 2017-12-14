@@ -7,7 +7,7 @@
 * - Francisco <@fe.up.pt>
 * - Pedro Azevedo   <up201306026@fe.up.pt>
 */
-    require_once('./database/db.php');
+    require_once('database/db.php');
 ?>
 
 
@@ -29,7 +29,7 @@
         <header>
             <div id="logo">
                 <a href="index.php">
-                    <img src="./images/todolist.png">
+                    <img src="images/todolist.png">
                 </a>
             </div>
 

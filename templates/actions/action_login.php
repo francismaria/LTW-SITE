@@ -13,6 +13,7 @@ require_once('../../database/db.php');
 session_start();
 $db = new Database('../../database/helpo.db');
 $user = $db->get_user_from_credentials($_POST['username'], $_POST['password']);
+echo $user['PASSWORD'];
 header('Location: ../../profile_page.php?id='.$user['USER_ID']);
 
 if (isset($_POST['username']) && isset($_POST['password'])) {

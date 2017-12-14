@@ -10,7 +10,8 @@
 ?>
 
     <div id="footer">
-      Bruno Miguel & Francisco & Pedro Azevedo // Copyright 2017 // LTW @ FEUP
+      Bruno Miguel & Francisco & Pedro Azevedo // Copyright 2017 // LTW @ FEUP 
+      <?echo '<div class="text dateheader">' . date('jS \of F Y h:i A') . '</div>'; ?>
     </div>
   </body>
 </html>
