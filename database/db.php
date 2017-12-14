@@ -175,18 +175,6 @@
 			$statement->execute(array($user_name));
 			return $statement->fetch();
 		}
-		
-		public function get_tasks_from_user($user_id) {
-			$statement = $this->database->prepare('SELECT * FROM projectTaskUsers WHERE user_id = ?');
-			$statement->execute(array($user_id));
-			return $statement->fetchAll();
-		}
-		
-		public function get_project_id_from_project_name($project_name) {
-			$statement = $this->database->prepare('SELECT * FROM projects WHERE project_name = ?');
-			$statement->execute(array($project_name));
-			return $statement->fetch();
-		}
 		/**
          * @brief Gets the tasks with a certain task_id from the database
          * @param &list_id
@@ -227,11 +215,6 @@
 		public function remove_project($project_id) {
 			$statement = $this->database->prepare('DELETE FROM projects WHERE project_id = ?');
 			$statement->execute(array($project_id));
-		}
-		
-		public function remove_user_from_project($task_id, $project_id) {
-			$statement = $this->database->prepare('DELETE FROM projectTaskUsers WHERE project_id = ? AND task_id = ?');
-			$statement->execute(array($project_id,$task_id));
 		}
         /**
          * @brief Updates user password.
