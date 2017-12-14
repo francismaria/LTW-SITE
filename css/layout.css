@@ -27,6 +27,29 @@ body > header > h3
 }
 
 
+
+/* Intro */
+
+#intro
+{
+    display: flex;
+}
+
+#intro > h3
+{
+    margin-top: 3em;
+    margin-left: 2em;
+    margin-right: 1.5em;
+    flex-shrink: 1.5;
+}
+
+#intro > img
+{
+    margin-right: 3em;
+    width: 100%;
+    height: 90%;
+}
+
 /* Menu */
 
 #menu
@@ -46,6 +69,6 @@ body > header > h3
     background-color: #4cbdda;
     display: block;
     margin-bottom: 0em;
-    flex: 1;
+    flex: 2;
     padding: 0.6em;
 }
