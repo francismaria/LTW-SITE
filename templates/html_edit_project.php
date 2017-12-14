@@ -54,7 +54,7 @@ $project = $db->get_project_by_project_id($_GET['id']);
 			echo '<tr>';
 			$task = $db->getTaskFromTaskId($tasklist['task_id']);
 			echo '<td><input id="' . $task['task_id'] . '" type="checkbox"/></td>';
-			echo '<td><a id="' . $list['list_name'] . '"href="todolists.php?id=' . $list['list_id'] . '">' . $list['list_name'] . '</a></td>';
+			echo '<td><a id="' . $list['list_name'] .'">' . $list['list_name'] . '</a></td>';
 			echo '<td><a id="' . $task['task_name'] . '"href="tasks.php?id=' . $list['list_id'] . '">' . $task['task_name'] . '</a></td>';
 			?>
 			<td>

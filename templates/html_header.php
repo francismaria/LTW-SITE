@@ -52,6 +52,7 @@
            <?  
 				echo '<a href="projects.php?id=' . $_SESSION['userid'] .'"><div class="text">My Projects</div></a>';
                 echo '<a href="todolists.php?id=' . $_SESSION['userid'] .'"><div class="text">My Lists</div></a>';
+				echo '<a href="todolists.php?id=' . $_SESSION['userid'] .'"><div class="text">My Tasks</div></a>';
               
            ?>
         </div>
