@@ -231,4 +231,19 @@ $(document).ready(function() {
 				 });
 		});
 	});
+	
+	$('#mytaskscontent #delete').click(function() {			
+		$('#mytaskstable tr:not(:first-child) td input:checked').each(function() {
+		  var taskid = $(this).attr('id');
+		  var projectname = $('input[name="id' + taskid + '"]').val();
+		  $.post('./templates/actions/action_remove_user_from_project.php',
+				 { project_name: projectname, task_id: taskid },
+				 function(data) {
+				   if (data == '1') {
+					   console.log(data);
+				   }
+				   console.log(data);
+				 });
+		});
+	});
 });
