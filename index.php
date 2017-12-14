@@ -15,6 +15,7 @@
     
     include_once('templates/common/header.php');
     include_once('templates/common/registers.php');
+    include_once('templates/common/intro.php');
     include_once('templates/common/footer.php');
 ?>
 
