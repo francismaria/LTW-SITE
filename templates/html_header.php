@@ -60,7 +60,7 @@
                 }
                 ?></a><?
                 echo '<a href="profile_page.php?id='. $_SESSION['userid'] . '">';
-                echo '<div class="text">' . $_SESSION['username'] . '</div></a></div>';
+                echo '<div class="text">' . $_SESSION['username'] . '</div></a>';
                 echo '<div id="usermenu">';
                 echo '<a href="profile_page.php?id='. $_SESSION['userid'] . '"><p> Profile Page </p></a>';
                 echo '<a href="favorites_page.php"><p> Favorites Page </p></a>';

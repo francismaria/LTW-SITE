@@ -51,7 +51,7 @@ body > header > h1
     padding-top: 0.1em;    
 }
 
-/* div#header {
+div#header {
 	height: 200px;
 	padding: 0px;
 	margin-bottom: 30px;
@@ -66,7 +66,7 @@ div#header div.text {
 }
 
 
-#logo {
+/* #logo {
 	margin: 0px;
 	padding-left: 0px;
 	width: 200px;
