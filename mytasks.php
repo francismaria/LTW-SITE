@@ -9,8 +9,8 @@
 */
 
 session_start();
-$task_section = "tasks";
+$mytasks_section = "mytasks";
 include_once('./templates/html_header.php');
-include_once('./templates/html_tasks.php');
+include_once('./templates/html_mytasks.php');
 include_once('./templates/html_footer.php');
 ?>
