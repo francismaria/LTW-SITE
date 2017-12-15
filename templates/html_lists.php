@@ -9,7 +9,12 @@
 */
 include_once('./database/db.php');
 $db = new Database('./database/helpo.db');
-$todolists = $db->getListsFromUserId($_GET['id']);    //TODO: COMO IR BUSCAR O IR DO CURRENT USER?
+$todolists = $db->getListsFromUserId($_GET['id']);   
+
+if($_GET['id'] != $_SESSION['userid']){
+	header("Location: notpermit.html");
+}
+
 ?>
 <form>
   <table class="list listslist" id="<? echo $todolist_section; ?>table">

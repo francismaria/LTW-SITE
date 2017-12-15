@@ -33,6 +33,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	
   }
   else {
-    //colocar uma página erro, para efetuar login again
+    header('Location: ./../../notpermit.html');
   }
 }

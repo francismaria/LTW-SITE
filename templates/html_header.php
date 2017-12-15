@@ -54,7 +54,7 @@
               {
                 echo '<div id="usershow"><a href="profile_page.php?id='. $_SESSION['userid'] . '">';
                 if ($_SESSION['useravatar'] != NULL) {
-                    echo '<img class="mini_avatar" src="' . $_SESSION['useravatar'] . '"/>';
+                    echo '<img class="mini_avatar" src=" ./templates/actions/userspics/'. $_SESSION['username'] . '.png"/>';
                 } else {
                     echo '<img class="mini_avatar" src="images/default-avatar.png"/>';
                 }

@@ -11,6 +11,10 @@ include_once('./templates/actions/action_color_task.php');
 include_once('./database/db.php');
 $db = new Database('./database/helpo.db');
 
+if($_GET['id'] != $_SESSION['userid']){
+	header("Location: notpermit.html");
+}
+
 
 ?>
 <div id="mytasks">

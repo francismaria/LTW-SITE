@@ -363,7 +363,7 @@
                         (:role, :username, :password, :email, :firstname, :lastname, :bday, :bmonth, :byear, :img_name)');
 
             //Encrypts password
-            $password = password_hash($password, PASSWORD_DEFAULT);
+            //$password = password_hash($password, PASSWORD_DEFAULT);
 
             $stmt->bindParam(':role', $role);
             $stmt->bindParam(':username', $username);

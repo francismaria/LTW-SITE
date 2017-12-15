@@ -42,5 +42,5 @@
         echo $e->getMessage();
     }
 
-    echo '<img src="images/userspics/' . $_FILES["file"]["name"]."jpg" . ' alt="not found" >';
+	header('Location: ./../../index.php');
 ?>

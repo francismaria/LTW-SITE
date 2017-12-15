@@ -1,5 +1,5 @@
 <?
-/* 
+/*
 * Copyright (C) LTW @ FEUP project authors. All rights reserved.
 *
 * Authors:
@@ -13,6 +13,9 @@ $db = new Database('./database/helpo.db');
 
 $projectsList = $db->get_projects_by_user_id($_GET['id']);
 
+if($_GET['id'] != $_SESSION['userid']){
+  header("Location: notpermit.html");
+}
 ?>
 <div id="projects">
 <h1>My Projects</h1>
@@ -24,10 +27,10 @@ $projectsList = $db->get_projects_by_user_id($_GET['id']);
       <div class="line">
         Project Name
         <input name="name" type="textbox" placeholder="Name"/>
-        <input id="addproject" type="button" value="Add"/>
-        <input class="clearform" type="button" value="Clear"/><br/>
-	    </div>
-    </form> 
+		<input id="addproject" type="button" value="Add"/>
+		<input class="clearform" type="button" value="Clear"/><br/>
+	</div>
+    </form>
 <form>
   <table class="list projectslist" id="<? echo $project_section; ?>table">
     <tr>

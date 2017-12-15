@@ -44,7 +44,10 @@ function setYears(){
     let currentYear = (new Date()).getFullYear();
 
     let years = document.getElementById('years');
-
+	let option = document.createElement('option');
+	option.setAttribute('value', 'null');
+	option.innerHTML = '-';
+	years.appendChild(option);
     for(let i = (currentYear-1); i >= startYear; i--){
         let option = document.createElement('option');
         option.setAttribute('value', i);

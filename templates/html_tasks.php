@@ -1,5 +1,5 @@
 <?
-/* 
+/*
 * Copyright (C) LTW @ FEUP project authors. All rights reserved.
 *
 * Authors:
@@ -12,6 +12,7 @@ include_once('./database/db.php');
 $db = new Database('./database/helpo.db');
 
 $taskLists = $db->getTasksListsFromListsId($_GET['id']);
+
 
 ?>
 <div id="tasks">
@@ -27,11 +28,11 @@ $taskLists = $db->getTasksListsFromListsId($_GET['id']);
 		<input name="id" type="textbox" placeholder="Name" value="<?=$_GET['id'] ?>"style="display:none"/>
 		<input class="clearform" type="button" value="Clear"/><br/>
 	</div>
-	<div class="line">	
+	<div class="line">
 		Limit Date
 		<input name="day" type="textbox" placeholder="DD"/>
 		<input name="month" type="textbox" placeholder="MM"/>
-		<input name="year" type="textbox" placeholder="YYYY"/>        
+		<input name="year" type="textbox" placeholder="YYYY"/>
       </div>
 	  <div class="line">
 	  Description

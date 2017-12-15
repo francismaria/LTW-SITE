@@ -14,7 +14,7 @@
 	$db = new Database('./database/helpo.db');
 	$task = $db->get_completed_from_task_id($task_id);
 	if($task['task_completed'] == 1){
-		$string = green;
+		$string = "green";
 	} else{
 		$today_year = idate("Y");
 		$today_month = idate("m");

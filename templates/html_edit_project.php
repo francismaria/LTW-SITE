@@ -12,6 +12,9 @@ include_once('./database/db.php');
 $db = new Database('./database/helpo.db');
 
 $project = $db->get_project_by_project_id($_GET['id']);
+if($_GET['id'] != $_SESSION['userid']){
+	header("Location: notpermit.html");
+}
 
 ?>
 <div id="projects">
