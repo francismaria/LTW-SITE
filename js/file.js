@@ -45,6 +45,11 @@ function setYears(){
 
     let years = document.getElementById('years');
 
+    let option = document.createElement('option');
+    option.setAttribute('value', 'null');
+    option.innerHTML = '-';
+    years.appendChild(option);
+
     for(let i = (currentYear-1); i >= startYear; i--){
         let option = document.createElement('option');
         option.setAttribute('value', i);
@@ -109,4 +114,3 @@ function showSignupForm(){
 function notCheckedTerms(){
         alert('You have to accept HELPO terms and conditions in order to create a new account.');
 }
-
