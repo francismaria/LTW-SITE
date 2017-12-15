@@ -1,50 +1,42 @@
 <?php
-
-    include_once("../../database/connection.php");
-
     try {
+        require_once('../../database/db.php');
 
-        $db = new Database('database/helpo.db');
-        if(move_uploaded_file($_FILES['file']['tmp_name'], "images/userspics/".$_FILES["file"]["name"])){
-            echo 'File is valid';
-        }
-        else{
-            echo 'File is not valid';
-            echo $_FILES['file']['error'];
-        }
+        $db = new Database('../../database/helpo.db');
 
-        // $stmt = $db->prepare('INSERT INTO USERS(ROLE, USERNAME, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, 
-        //                       BDAY, BMONTH, BYEAR, IMG_NAME) VALUES
-        //                       (:role, :username, :password, :email, :firstname, :lastname, :bday, :bmonth, :byear, :img_name)');
-		$role = 3; //predefined User Role
+
+		    $role = 3; //predefined User Role
         $username = $_POST["username"];
         $password = $_POST["pass"];
         $email = $_POST["e_mail"];
-        $firstname = $_POST["first_name"];
-        $lastname = $_POST["last_name"];
+        $first_name = $_POST["first_name"];
+        $last_name = $_POST["last_name"];
         $bday = $_POST["day"];
         $bmonth = $_POST['month'];
-        $byear = $_POST['year'];
-        $img_name = $username.".jpg";
-        
+        $byear = $_POST["years"];
 
-        $db->setNewUser($role, $username, $password, $email, $first_name, $last_name, $bday, $bmonth, $byear, $img_name);
+        if(!is_uploaded_file($_FILES['file']['tmp_name'])){
+          $img_name = "default-avatar.png";
+        }
+        else{
+          // Gets extension from uploaded image
+          $path = $_FILES['file']['name'];
+          $ext = pathinfo($path, PATHINFO_EXTENSION);
 
-        //Encrypts password
-        // $password = password_hash($password, PASSWORD_ARGON2I);
+          if(move_uploaded_file($_FILES['file']['tmp_name'],"./userspics/".$username. '.' .$ext)){
+              echo 'File is valid';
+          }
+          else{
+              echo 'File is not valid';
+              echo $_FILES['file']['error'];
+          }
 
-		// $stmt->bindParam(':role', $role);
-        // $stmt->bindParam(':username', $username);
-        // $stmt->bindParam(':password', $password);
-        // $stmt->bindParam(':email', $email);
-        // $stmt->bindParam(':firstname', $firstname);
-        // $stmt->bindParam(':lastname', $lastname);
-        // $stmt->bindParam(':bday', $bday);
-        // $stmt->bindParam(':bmonth', $bmonth);
-        // $stmt->bindParam(':byear', $byear);
-        // $stmt->bindParam(':img_name', $img_name);
+          $img_name = $username.".jpg";
+        }
 
-        // $stmt->execute();
+        // Adds new user to the database
+        $db->addNewUser($role, $username, $password, $email, $first_name, $last_name, $bday, $bmonth, $byear, $img_name);
+
     }
     catch(PDOException $e){
         echo $e->getMessage();
