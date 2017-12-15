@@ -32,7 +32,7 @@ $(document).ready(function() {
       return;
     }
 	$('table.list').remove();
-	$('#homecontent').after('<table class="list homelist"></table>');
+	$('#homecontent').after('<table class="list homelist" id="hometable"></table>');
 	//$('table.list').append('<tr><td>Project Name</td><td>List Name</td><td>Task Name</td><td>User Name</td></tr>');   
 	
 	$.post('./templates/actions/action_search.php',

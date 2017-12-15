@@ -114,7 +114,7 @@
             $statement = $this->database->prepare('SELECT * FROM users WHERE USERNAME = ? AND PASSWORD = ?');
 		
             //Encrypts password
-            $password = password_hash($password, PASSWORD_DEFAULT);
+            //$password = password_hash($password, PASSWORD_DEFAULT);
             $statement->execute(array($user, $password));
             return $statement->fetch();
         }

@@ -19,7 +19,7 @@
       echo '</div>';
     }
     if (isset($user['IMG_NAME'])) {
-      echo '<img id="profileimage" src="' . $user['IMG_NAME'] . '"/>';
+      echo '<img id="profileimage" src=" ./templates/actions/userpics/'. $user['USERNAME'] . '"/>';
     } else {
       echo '<img id="profileimage" src="./images/default-avatar.png"/>';
     }
