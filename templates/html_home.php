@@ -40,39 +40,39 @@ $projects_list = $db->get_projects();
 				}
 			?>
 		</datalist>
-		Task
+		<!--Task
 		<input list="tarefas" name="task_id" type="textbox" placeholder="TaskName"/>
 		<datalist id="tarefas">
-			<?php 
+			<?php /*
 				$tasks = $db->get_tasks();
 				foreach ($tasks as $task) {
 					echo '<option value="' . $task['task_name'] . '">';
-				}
+				}*/
 			?>
 		</datalist>
 		User
 		<input list="utilizadores" name="user_id" type="textbox" placeholder="UserName"/>
 		<datalist id="utilizadores">
 			<?php 
-				$users = $db->get_users();
+				/*$users = $db->get_users();
 				foreach ($users as $user) {
 					echo '<option value="' . $user['USERNAME'] . '">';
-				}
+				}*/
 			?>
 		</datalist>
 		</div>
 		<div class="line">
 			Task Limit Date
-			<input class="day" name="sday" type="textbox" placeholder="DD"/>
-			<input class="month" name="smonth" type="textbox" placeholder="MM"/>
-			<input class="year" name="syear" type="textbox" placeholder="YYYY"/>
+			<input class="day" name="lday" type="textbox" placeholder="DD"/>
+			<input class="month" name="lmonth" type="textbox" placeholder="MM"/>
+			<input class="year" name="lyear" type="textbox" placeholder="YYYY"/>
 			Task Completed
-			<td><input id="completed" type="checkbox"/></td>
+			<td><input id="completed" type="checkbox"/></td>-->
 			<input id="runsearch" type="button" value="Run Search"/>
 			<input id="clearsearch" class="clearform" type="button" value="Clear"/>
 		</div>
 		<div class="line">
-		</div>
+		</div> 
 	</form>
 	</div>
 	<form>
