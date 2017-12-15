@@ -12,7 +12,7 @@
 body 
 {
 	/*width: 900px;*/
-	margin: 2em 10em 3em 10em;
+	margin: 1em 10em 3em 10em;
     background-color: #eaeaea;
     font-family: Trebuchet MS;
     padding: 0%;
@@ -95,6 +95,9 @@ body > header a
 
 #login_form {
     display: none;
+    margin-right: 2em;
+    margin-top: 4em;
+    margin-bottom: 8em;
 }
 
 #login{
@@ -107,7 +110,7 @@ body > header a
     padding: 7px;
     border-radius: 4px;
     font-size: 20px;
-    background-color: gray;
+    background-color: #9e9c9c;
     cursor: hand;
 }
 
@@ -126,6 +129,80 @@ body > header a
 
 #signup_form{
     display: none;
+    margin-right: 2em;
+    margin-top: 3em;
+    margin-bottom: 8em;
+    margin: 3em 2em 8em 3em;
+}
+
+#signup_form > form
+{
+    padding-top: 0em;
+    margin-top: 0em;
+    margin-left: 3em;
+}
+
+#signup_form input[type="text"], #signup_form input[type="password"], #signup_form input[type="email"] 
+{
+    width: 60%;
+    margin-top: 0.2em;
+    margin-bottom: 0.6em;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: #faf9f9;
+    cursor: hand;
+}
+
+#signup_form input[type="password"]
+{
+    margin-bottom: 0.8em;
+}
+
+#signup_form .bdaySelector
+{
+    padding-top: 0.5em;
+}
+
+#signup_form .bdaySelector select
+{
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+#signup_form .bdaySelector select:nth-of-type(1)
+{
+    width: 2.8em;
+}
+
+#signup_form input[type="submit"]
+{
+    width: 40%;
+    margin-top: 1em;
+    margin-left: 2em;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: #c0c0c0;
+    cursor: hand;
+}
+
+#signup_form input[type="file"]
+{
+    margin-top: 0.4em;
+}
+
+#signup_form label
+{
+    margin-bottom: 0.5em;
+}
+
+
+#signup_info
+{
+    padding-top: 3em;
+    padding-left: 6em;
+    padding-bottom: 9em;
+    flex: 1;
 }
 
 .form_button{
@@ -143,15 +220,14 @@ body > header a
 
 body > footer
 {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #494848;
-    margin: 0em 10em;
-    padding: 0.65em;
-    color: #ffffff;
-}
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px 0px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #b3b1b1;
+    color: #555454;
+} 
 
 
 /* Lists Style */

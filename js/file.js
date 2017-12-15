@@ -95,11 +95,11 @@ function showSignupForm(){
         login_form.style.display = "none";
     }
 
-    if(signup_form.style.display == "block"){
+    if(signup_form.style.display == "flex"){
         signup_form.style.display = "none";
     }
     else{
-        signup_form.style.display = "block";
+        signup_form.style.display = "flex";
     }
 }
 

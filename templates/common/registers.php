@@ -27,9 +27,9 @@
                 <input type="text" name="last_name" required/>
                 <label><br/>E-mail<br/></label>
                 <input type="email" name="e_mail" required/>
-                <label><br>Username<br/></label>(maximum number of characters: 15)<br/>
+                <label><br>Username (max: 15 characters)<br/></label>
                 <input type="text" name="username" maxlength="15" required/>
-                <label><br/>Password<br/></label>(minimun number of characters: 6)<br/>
+                <label><br/>Password (min: 6 characters)<br/></label>
                 <input type="password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required/><br/>
                 <label>Enter your birthdate</label><br/>
                 <div class="bdaySelector">
@@ -59,9 +59,13 @@
                 <label><br/>Profile Picture<br/></label>
                 <input type="file" name="file" id="file"/><br/><br/>
                 <input type="checkbox" name="terms" oninvalid=notCheckedTerms(); required/>
-                I accept the terms and conditions of HELPO website.<br/>
+                I accept the terms and conditions of this website.<br/>
                 <input type="submit" value="Register"/>
             </form>
+
+            <div id="signup_info">
+                <img src="images/reunion.jpg" height="100%" width="100%" alt="It wasn't possible to show this image."/>
+            </div>
         </div>
     </section>
 

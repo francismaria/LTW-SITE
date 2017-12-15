@@ -24,10 +24,10 @@ $projectsList = $db->get_projects_by_user_id($_GET['id']);
       <div class="line">
         Project Name
         <input name="name" type="textbox" placeholder="Name"/>
-		<input id="addproject" type="button" value="Add"/>
-		<input class="clearform" type="button" value="Clear"/><br/>
-	</div>
-    </form>
+        <input id="addproject" type="button" value="Add"/>
+        <input class="clearform" type="button" value="Clear"/><br/>
+	    </div>
+    </form> 
 <form>
   <table class="list projectslist" id="<? echo $project_section; ?>table">
     <tr>

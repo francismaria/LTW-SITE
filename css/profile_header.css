@@ -337,6 +337,17 @@ div.longform input[value="Cancel"] {
 /* Profile ------------------------------------------------
 /**/
 
+#profile > h1
+{
+  padding-left: 0.8em;
+  padding-bottom: 0.3em;
+}
+
+#profile .ptable
+{
+  padding-left: 2em;
+}
+
 #profilecontent {
   padding-top: 15px;
   border-top: 1px gray solid;
@@ -420,23 +431,6 @@ form.signin p {
 }
 
 
-
-/* Footer */
-
-div#footer {
-   width: 900px;
-   float: left;   
-   background-color: #c7c6c6;
-   color: #555454;
-   margin-top: 30px;
-   text-align: center;
-   padding: 10px 0px;
-   font-weight: bold;
-	font-size: 15px;
-}
-
-
-
 /* Menu */
 
 #menu
@@ -499,12 +493,13 @@ div#footer {
 
 #usermenu p:hover 
 {
-    background-color: #EAEAEA;
+    background-color: #add9ee;
 }
 
 #usermenu p 
 {
    font-weight: bold;
+   padding: 0.5em;
 }
 
 
@@ -512,13 +507,15 @@ div#footer {
 {
     display: block;
     position: absolute;
-    background-color: #020303;	
+    background-color: #4cbdda;	
 	  right: 0;
 	  padding: 10px;
-	  margin-top: 50px;
+    margin-top: 36.5px;
+    margin-right: 5px;
 	  font-size: 15px;
 	  font-weight: bold;
-	  border-top: 1px dashed #EAEAEA;
+    border-top: 1px solid #51a0d4;
+    border-radius: 4px;
 }
 
 img.mini_avatar {
@@ -562,4 +559,385 @@ img.mini_avatar {
 {
     background-color: #51a0d4;
     transform: scale(1.1, 1.1);
+}
+
+
+
+/* Home Style */
+
+#home > h1
+{
+    padding-left: 0.5em;
+    margin-bottom: 0.8em;
+}
+
+#home .line input
+{
+  width: 12%;
+  text-indent: 1em;
+  margin-right: 1.8em;
+}
+
+#home .line:first-of-type
+{
+    padding-bottom: 1em;
+}
+
+#home form:first-of-type
+{
+  border-radius: 4px;
+}
+
+#home #runsearch, #home #clearsearch
+{
+  margin-top: 1em;
+  text-align: center;
+  padding-left: 0em;
+}
+
+#home form table
+{
+    margin-top: 2em; 
+}
+
+#home form table tr td
+{
+  text-align: center;
+  padding: 0.6em;
+  margin-bottom: 0em;
+  border-style: solid;
+  border-radius: 3px;
+  border-bottom-width: 0.02em;
+  border-left-width: 0.02em;
+  border-width: 0em 0.02em 0.02em 0.02em;
+  border-color: #cecccc;
+}
+
+#home form table tr td:nth-of-type(2)
+{
+  border-left-width: 0em;
+}
+
+#home form table tr td:nth-of-type(1)
+{
+  border-right-width: 0em;
+}
+
+#home form table a
+{
+  text-decoration: none;
+}
+
+#home form table tr:first-child td
+{
+  text-align: center;
+  padding: 0.9em;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #7fbfcf;
+  border-width: 0.2em;
+  margin-bottom: 2em;
+}
+
+
+
+/* Projects Style */
+
+#projects > h1
+{
+    padding-left: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+#projects form table
+{
+  margin-top: 1.3em;
+}
+
+#projects form table tr td
+{
+  text-align: center;
+  padding: 0.6em;
+  margin-bottom: 0em;
+  border-style: solid;
+  border-radius: 3px;
+  border-bottom-width: 0.02em;
+  border-left-width: 0.02em;
+  border-width: 0em 0.02em 0.02em 0.02em;
+  border-color: #cecccc;
+}
+
+#projects form table tr td:nth-of-type(2)
+{
+  border-left-width: 0em;
+}
+
+#projects form table tr td:nth-of-type(1)
+{
+  border-right-width: 0em;
+}
+
+#projects form table a
+{
+  text-decoration: none;
+}
+
+#projects form table tr:first-child td
+{
+  text-align: center;
+  padding: 0.7em;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #7fbfcf;
+  border-width: 0.18em;
+  margin-bottom: 2em;
+}
+
+
+
+/* Lists Style */
+
+#lists > h1
+{
+    padding-left: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+#lists form table
+{
+  margin-top: 1.3em;
+}
+
+#lists form table tr td
+{
+  text-align: center;
+  padding: 0.6em;
+  margin-bottom: 0em;
+  border-style: solid;
+  border-radius: 3px;
+  border-bottom-width: 0.02em;
+  border-left-width: 0.02em;
+  border-width: 0em 0.02em 0.02em 0.02em;
+  border-color: #cecccc;
+}
+
+#lists form table tr td:nth-of-type(2)
+{
+  border-left-width: 0em;
+}
+
+#lists form table tr td:nth-of-type(1)
+{
+  border-right-width: 0em;
+}
+
+#lists form table a
+{
+  text-decoration: none;
+}
+
+#lists form table tr:first-child td
+{
+  text-align: center;
+  padding: 0.7em;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #7fbfcf;
+  border-width: 0.18em;
+  margin-bottom: 2em;
+}
+
+
+
+/* Tasks Style */
+
+#mytasks > h1
+{
+    padding-left: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+#mytasks form table
+{
+  margin-top: 1.3em;
+}
+
+#mytasks form table tr td
+{
+  text-align: center;
+  padding: 0.6em;
+  margin-bottom: 0em;
+  border-style: solid;
+  border-radius: 3px;
+  border-bottom-width: 0.02em;
+  border-left-width: 0.02em;
+  border-width: 0em 0.02em 0.02em 0.02em;
+  border-color: #cecccc;
+}
+
+#mytasks form table tr td:nth-of-type(2)
+{
+  border-left-width: 0em;
+}
+
+#mytasks form table tr td:nth-of-type(1)
+{
+  border-right-width: 0em;
+}
+
+#mytasks form table a
+{
+  text-decoration: none;
+}
+
+#mytasks form table tr td:nth-of-type(3) a
+{
+    padding: 0.1em 1em 0.1em 1em;
+    border-radius: 5px;
+}
+
+#mytasks form table tr:first-child td
+{
+  text-align: center;
+  padding: 0.7em;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #7fbfcf;
+  border-width: 0.18em;
+  margin-bottom: 2em;
+}
+
+
+
+/* Users Style */
+
+#users > h1
+{
+    padding-left: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+#users form table
+{
+  margin-top: 1.3em;
+}
+
+#users form table tr td
+{
+  text-align: center;
+  padding: 0.6em;
+  margin-bottom: 0em;
+  border-style: solid;
+  border-radius: 3px;
+  border-bottom-width: 0.02em;
+  border-left-width: 0.02em;
+  border-width: 0em 0.02em 0.02em 0.02em;
+  border-color: #cecccc;
+}
+
+#users form table tr td:nth-of-type(2)
+{
+  border-left-width: 0em;
+}
+
+#users form table tr td:nth-of-type(1)
+{
+  border-right-width: 0em;
+}
+
+#users form table a
+{
+  text-decoration: none;
+}
+
+#users form table tr td:nth-of-type(3) a
+{
+    padding: 0.1em 1em 0.1em 1em;
+    border-radius: 5px;
+}
+
+#users form table tr:first-child td
+{
+  text-align: center;
+  padding: 0.7em;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #7fbfcf;
+  border-width: 0.18em;
+  margin-bottom: 2em;
+}
+
+
+/* Servers Style */
+
+#servers > h1
+{
+    padding-left: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+#servers form table
+{
+  margin-top: 1.3em;
+}
+
+#servers form table tr td
+{
+  text-align: center;
+  padding: 0.6em;
+  margin-bottom: 0em;
+  border-style: solid;
+  border-radius: 3px;
+  border-bottom-width: 0.02em;
+  border-left-width: 0.02em;
+  border-width: 0em 0.02em 0.02em 0.02em;
+  border-color: #cecccc;
+}
+
+#servers form table tr td:nth-of-type(2)
+{
+  border-left-width: 0em;
+}
+
+#servers form table tr td:nth-of-type(1)
+{
+  border-right-width: 0em;
+}
+
+#servers form table a
+{
+  text-decoration: none;
+}
+
+#servers form table tr td:nth-of-type(3) a
+{
+    padding: 0.1em 1em 0.1em 1em;
+    border-radius: 5px;
+}
+
+#servers form table tr:first-child td
+{
+  text-align: center;
+  padding: 0.7em;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #7fbfcf;
+  border-width: 0.18em;
+  margin-bottom: 2em;
+}
+
+
+
+/* Footer */
+
+div#footer {
+  width: 900px;
+  float: left;   
+  background-color: #b3b1b1;
+  color: #555454;
+  margin-top: 10em;
+  text-align: center;
+  padding: 10px 0px;
+  font-weight: bold;
+  font-size: 15px;
 }

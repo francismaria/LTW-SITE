@@ -37,6 +37,7 @@
         </header>
 
         <section id="menu"> 
+            <!-- <a href="index.php"><button type="button" class="form_button">HOME</button></a> -->
             <button type="button" class="form_button">HOME</button>
             <button type="button" onclick="showLoginForm()" class="form_button">LOG IN</button>
             <button type="button" onclick="showSignupForm()" class="form_button">SIGN UP</button>
