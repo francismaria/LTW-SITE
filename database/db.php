@@ -112,6 +112,9 @@
          */
         public function get_user_from_credentials($user, $password) {
             $statement = $this->database->prepare('SELECT * FROM users WHERE USERNAME = ? AND PASSWORD = ?');
+		
+            //Encrypts password
+            $password = password_hash($password, PASSWORD_DEFAULT);
             $statement->execute(array($user, $password));
             return $statement->fetch();
         }
@@ -316,7 +319,67 @@
             $stmt->execute(array($list_id));
             return $stmt->fetchAll();
         } 
+	
+	/**
+         * @brief Checks if a user has entered a valid username and a valid email (non taken). Returns 0 if not valid and 1 otherwise.
+         * @param $username
+         * @param $email
+         * @return int
+         */
+        public function checkUserAvailability($username, $email){
 
+            $userAvailability = $this->database->prepare('SELECT * FROM users WHERE USERNAME = ? OR EMAIL = ?');
+            $userAvailability->execute(array($username, $email));
+
+            if(count($userAvailability->fetchAll()) > 0){
+                return 0;
+            }
+            return 1;
+        }
+
+        /**
+         * @brief Adds a new user to the database
+         * @param $role
+         * @param $username
+         * @param $password
+         * @param $email
+         * @param $first_name
+         * @param $last_name
+         * @param $bday
+         * @param $bmonth
+         * @param $byear
+         * @param $img_name
+         */
+        public function addNewUser($role, $username, $password, $email, $first_name, $last_name,
+                                    $bday, $bmonth, $byear, $img_name){
+
+            if($this->checkUserAvailability($username, $email) == 0)
+                return;
+
+            $this->database->beginTransaction();
+
+            $stmt = $this->database->prepare('INSERT INTO USERS(ROLE, USERNAME, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME,
+                        BDAY, BMONTH, BYEAR, IMG_NAME) VALUES
+                        (:role, :username, :password, :email, :firstname, :lastname, :bday, :bmonth, :byear, :img_name)');
+
+            //Encrypts password
+            $password = password_hash($password, PASSWORD_DEFAULT);
+
+            $stmt->bindParam(':role', $role);
+            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':password', $password);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':firstname', $first_name);
+            $stmt->bindParam(':lastname', $last_name);
+            $stmt->bindParam(':bday', $bday);
+            $stmt->bindParam(':bmonth', $bmonth);
+            $stmt->bindParam(':byear', $byear);
+            $stmt->bindParam(':img_name', $img_name);
+
+            $stmt->execute();
+
+            $this->database->commit();
+        }
 
         
 
